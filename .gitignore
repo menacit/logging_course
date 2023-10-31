@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+# SPDX-License-Identifier: CC-BY-SA-4.0
+# X-Context: Logging course
+
+# These directories are used for output/debugging/lab data and should not be tracked in VCS
+variables
+output
+_tmp
