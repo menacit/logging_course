@@ -7,10 +7,8 @@ author: "Joel Rangsmo <joel@menacit.se>"
 footer: "© Course authors (CC BY-SA 4.0)"
 description: "Group exercise in logging course"
 keywords:
-  - "cryptology"
-  - "cryptography"
-  - "practical"
-  - "encryption"
+  - "logging"
+  - "siem"
   - "course"
 color: "#ffffff"
 class:
