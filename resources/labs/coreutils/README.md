@@ -32,9 +32,11 @@ files and produce a timeline output file for a specified user matching the follo
 > $DATE $IP_ADDRESS $HTTP_METHOD $PATH $STATUS_CODE
 
 To further clarify, the output below contains an example of this format:
-> 09/16 12:04:39 192.0.2.85 GET /adm/my_profile.php 200
-> 09/16 12:04:41 127.0.0.22 POST /backup.php?s=now 500
-> 09/16 13:05:56 192.0.2.85 POST /logout.php 200
+```
+09/16 12:04:39 192.0.2.85 GET /adm/my_profile.php 200
+09/16 12:04:41 127.0.0.22 POST /backup.php?s=now 500
+09/16 13:05:56 192.0.2.85 POST /logout.php 200
+```
 
 All tools required to complete the assignment should be available on most Linux-based systems.
 If not, install the software packages for GNU Coreutils and GNU grep (commonly called "coreutils"
@@ -45,7 +47,7 @@ and "grep").
 
 ### Mandatory ("G")
 - Adjust timestamps in "www-2.log" to account for clock skew 
-- Adjust timestamps in "www-2.log" to account time zone difference
+- Adjust timestamps in "www-3.log" to account time zone difference
 - Merge and sort web server log files
 - Generate a timeline output file for the user "kim" ("r_user" field in logs)
 
