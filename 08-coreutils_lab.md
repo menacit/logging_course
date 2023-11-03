@@ -29,3 +29,16 @@ style: |
 # Lab: Analysis with Coreutils
 
 ![bg right:30%](images/08-pixel_mountain.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Luis Zuno (CC0 1.0)" -->
+## Lab description
+Graded exercise to use GNU Coreutils and grep for analyzing logs and extracting in-sights.
+  
+For detailed instructions, see:  
+["resources/labs/coreutils/README.md"](%RESOURCES_ARCHIVE%).  
+  
+**Remember to download the latest version of
+the resources archive! ("log.zip")**
+
+![bg right:30%](images/08-pixel_mountain.jpg)
