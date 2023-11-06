@@ -10,10 +10,10 @@
 =09/30 23:00:05 UTC: www-2: ERR: GET /cpanel <r_user:null,r_ip:66.96.149.32> 404
 =09/30 23:00:05 UTC: www-2: ERR: GET /wordpress/admin <r_user:null,r_ip:66.96.149.32> 404
 =09/30 23:00:05 UTC: www-2: ERR: POST /login.php?u=kim <r_user:null,r_ip:203.0.113.9> 401
-=09/30 23:00:08 UTC: www-2: ERR: POST /login.php?u=boris <r_user:null,r_ip:192.0.2.0.124> 401
+=09/30 23:00:08 UTC: www-2: ERR: POST /login.php?u=boris <r_user:null,r_ip:192.0.2.124> 401
 =09/30 23:00:13 UTC: www-2: ERR: POST /login.php?u=kim <r_user:null,r_ip:203.0.113.9> 401
 =09/30 23:00:13 UTC: www-2: INF: GET /adm/index.php <r_user:boris,r_ip:192.0.2.124> 200
-=09/30 23:00:13 UTC: www-2: INF: POST /login.php?u=boris <r_user:null,r_ip:192.0.2.0.124> 302
+=09/30 23:00:13 UTC: www-2: INF: POST /login.php?u=boris <r_user:null,r_ip:192.0.2.124> 302
 =09/30 23:02:29 UTC: www-2: INF: GET /adm/crm/customers.php?q= <r_user:kim,r_ip:203.0.113.9> 200
 =09/30 23:02:44 UTC: www-2: ERR: GET /adm/crm/customers.php?q=casino <r_user:kim,r_ip:203.0.113.9> 404
 =09/30 23:02:57 UTC: www-2: INF: POST /adm/time_report.php <r_user:boris,r_ip:192.0.2.124> 200
@@ -22,7 +22,7 @@
 =09/30 23:03:04 UTC: www-2: ERR: GET /adn <r_user:null,r_ip:192.0.2.124> 404
 =09/30 23:03:07 UTC: www-2: INF: GET /help.php <r_user:null,r_ip:192.0.2.99> 200
 =09/30 23:09:11 UTC: www-2: INF: GET /login.php <r_user:null,r_ip:192.0.2.124> 200
-=09/30 23:10:54 UTC: www-2: INF: POST /logout.php <r_user:boris,r_ip:192.0.2.0.124> 200
+=09/30 23:10:54 UTC: www-2: INF: POST /logout.php <r_user:boris,r_ip:192.0.2.124> 200
 =09/30 23:16:47 UTC: www-2: INF: GET /adm/crm/servers.php?id=Xample%20Bank%20%26%20Finance <r_user:kim,r_ip:203.0.113.9> 200
 =09/30 23:17:01 UTC: www-2: ERR: GET /adm/support_access.php?org=Xample%20Bank%20%26%20Finance&srv=14 <r_user:kim,r_ip:203.0.113.9> 403
 =09/30 23:17:55 UTC: www-2: INF: GET /adm/int/users.php?q=&role= <r_user:kim,r_ip:203.0.113.9> 200
@@ -37,7 +37,7 @@
 =09/30 23:27:54 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:203.0.113.9> 401
 =09/30 23:27:55 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:203.0.113.9> 401
 =09/30 23:50:39 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:198.51.100.42> 401
-=09/30 23:50:40 UTC: www-2: INF: POST /logout.php <r_user:kim,r_ip:192.0.2.0.124> 200
+=09/30 23:50:40 UTC: www-2: INF: POST /logout.php <r_user:kim,r_ip:192.0.2.124> 200
 =09/30 23:50:41 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:198.51.100.42> 401
 =09/30 23:50:41 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:198.51.100.42> 401
 =09/30 23:50:41 UTC: www-2: ERR: POST /login.php?u=thomas <r_user:null,r_ip:198.51.100.42> 401

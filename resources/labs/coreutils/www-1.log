@@ -14,7 +14,7 @@
 =09/30 23:06:12 UTC: www-1: ERR: GET /_admin <r_user:null,r_ip:66.96.149.32> 404
 =09/30 23:12:19 UTC: www-1: INF: GET /adm <r_user:null,r_ip:192.0.2.124> 302
 =09/30 23:12:29 UTC: www-1: INF: GET /adm/index.php <r_user:kim,r_ip:203.0.113.9> 200
-=09/30 23:12:30 UTC: www-1: INF: POST /login.php?u=kim <r_user:null,r_ip:192.0.2.0.124> 302
+=09/30 23:12:30 UTC: www-1: INF: POST /login.php?u=kim <r_user:null,r_ip:192.0.2.124> 302
 =09/30 23:15:42 UTC: www-1: INF: GET /help.php?article=Reporting%20card%skimming <r_user:null,r_ip:192.0.2.99> 200
 =09/30 23:20:16 UTC: www-1: INF: GET /adm/index.php <r_user:kim,r_ip:203.0.113.9> 200
 =09/30 23:31:01 UTC: www-1: ERR: POST /login.php?u=thomas <r_user:null,r_ip:203.0.113.9> 401
