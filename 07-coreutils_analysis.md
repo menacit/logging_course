@@ -370,6 +370,10 @@ $ cat username.txt | tr -d "_-"
 bogdan
 ```
 
+![bg right:30%](images/07-pcb_cleaning.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% The Preiser Project (CC BY 2.0)" -->
 ### Remove repeating character
 ```
 $ cat friends.txt
@@ -463,9 +467,13 @@ Let's see how we can modify and correct timestamps in logs.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
 ## What is date?
-Command-line tool for working with calendar time.  
+Command-line tool for working with
+calendar time.  
 
-Uses the tz database under the hood.
+Uses the tz database under the hood.  
+  
+Useful for manual and automated
+time/date conversion.
 
 ![bg right:30%](images/07-pyramid.jpg)
 
@@ -484,7 +492,7 @@ Wed Nov  1 05:47:00 PM UTC 2023
 <!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
 ### Manually correct time skew
 ```
-$ date --date "09:50 UTC - 1 hour - 5 minutes"
+$ date -u --date "09:50 UTC - 1 hour - 5 minutes"
 
 Wed Nov  1 08:45:00 AM UTC 2023
 ```
@@ -495,9 +503,20 @@ Wed Nov  1 08:45:00 AM UTC 2023
 <!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
 ### Output custom time format
 ```
-$ date --date "09:50:41 UTC" "+%H_%M (==%s)"
+$ date -u --date "09:50:41 UTC" "+%H_%M (==%s)"
 
 09_50 (==1699005041)
+```
+
+![bg right:30%](images/07-pyramid.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
+### Advanced time expressions
+```
+$ date --date "tuesday next week 13:30 PST"
+
+Tue Nov  7 10:30:00 PM CET 2023
 ```
 
 ![bg right:30%](images/07-pyramid.jpg)
@@ -516,7 +535,7 @@ Let's combine for-loops, cut and date!
 ```
 IFS=$'\n'
 
-for LINE in $(cat fruits); do
+for LINE in $(cat fruits.txt); do
   echo "It's an ${LINE}"
 done
 
@@ -540,7 +559,7 @@ IFS=$'\n'
 for LINE in $(cat clock_skewed_log.txt); do
   TIMESTAMP="$(echo "${LINE}" | cut -d = -f 1)"
   MESSAGE="$(echo "${LINE}" | cut -d = -f 2-)"
-  FIXED_TIMESTAMP="$(date --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%m")"
+  FIXED_TIMESTAMP="$(date -u --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%M")"
   echo "${FIXED_TIMESTAMP}=${MESSAGE}"
 done
 
@@ -551,14 +570,40 @@ done
 ![bg right:30%](images/07-lego.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
+<!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
 Wanna store the output to a file?  
 
 Just use basic redirection:
+
 ```
+$ cat auth.log | grep "Failed to" > failed.txt
 ```
 
-![bg right:30%](images/07-lego.jpg)
+To prevent overwriting the output file,
+use "**>>**" instead.
+
+![bg right:30%](images/07-log_on_log.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
+Or even better, with **tee**:
+
+```
+$ cat auth.log | grep "Failed to" | tee failed.txt
+
+13:37 - Failed to authenticate "boba"
+13:38 - Failed to authenticate "fatty"
+
+$ cat failed.txt
+
+13:37 - Failed to authenticate "boba"
+13:38 - Failed to authenticate "fatty"
+```
+
+To prevent overwriting the output file,
+add the "**-a**" option to tee.
+
+![bg right:30%](images/07-log_on_log.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kristina Hoeppner (CC BY-SA 2.0)" -->
