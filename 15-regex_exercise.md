@@ -30,3 +30,15 @@ style: |
 ### Let's try it out!
 
 ![bg right:30%](images/15-birds.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Kuhnmi (CC BY 2.0)" -->
+Why re-invent the wheel?  
+
+Pop open your web browser and visit
+[**RegexOne (_https://regexone.com_)**](https://regexone.com)!  
+
+Feeling brave? Checkout the
+**"Practice Problems"** section.
+
+![bg right:30%](images/15-birds.jpg)
