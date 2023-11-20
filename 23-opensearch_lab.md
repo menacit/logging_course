@@ -26,7 +26,21 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Qubodup (CC BY 2.0)" -->
-# Lab: OpenSearch dashboard
+# Lab: OpenSearch
 ### Data filtering and visualization
+
+![bg right:30%](images/23-glitch_globe.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Qubodup (CC BY 2.0)" -->
+## Lab description
+Graded exercise to use Logstash for data extraction and OpenSearch Dashboards
+for visualization.
+  
+For detailed instructions, see:  
+["resources/labs/opensearch/README.md"](%RESOURCES_ARCHIVE%).  
+  
+**Remember to download the latest version of
+the resources archive! ("log.zip")**
 
 ![bg right:30%](images/23-glitch_globe.jpg)
