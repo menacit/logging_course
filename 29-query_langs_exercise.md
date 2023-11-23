@@ -26,7 +26,22 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fritzchens Fritz (CC0 1.0)" -->
-# Exercise: Trying SQL/PPL
-### Flexing different query languages
+## Exercise: Playing with SQL/PPL
+
+![bg right:30%](images/29-chip_closeup.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Fritzchens Fritz (CC0 1.0)" -->
+Open ["Query Workbench"](https://opensearch.org/docs/latest/dashboards/query-workbench/) page in
+your instance of OpenSearch Dashboards.  
+
+Develop queries using **both** SQL and PPL
+to find/filter information about:
+- Country and IP address for each failed Windows attempt login
+- Most common user-agents in web server logs grouped per country
+- Top 10 usernames observed during failed Windows login attempts
+
+Send SQL and PPL query strings to
+**[courses+log\_012901@%EMAIL_DOMAIN%](mailto:courses+log_012901@%EMAIL_DOMAIN%)**
 
 ![bg right:30%](images/29-chip_closeup.jpg)
