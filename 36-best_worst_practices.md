@@ -29,4 +29,4 @@ style: |
 # Best (and worst) practices
 ### More or less painful lessons
 
-![bg right:30%](images/34-old_computer.jpg)
+![bg right:30%](images/36-old_computer.jpg)

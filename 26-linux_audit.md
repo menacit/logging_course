@@ -33,7 +33,7 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Micah Elizabeth Scott (CC BY-SA 2.0)" -->
-Applications of Linux commonly produce
+Applications on Linux commonly produce
 security related log events and store
 them in text-files or syslog.
 

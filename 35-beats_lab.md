@@ -27,6 +27,21 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
 # Lab: Using Elastic Beats
-### Parsing/extracting logs with agents
+### Extracting logs and audit information
 
-![bg right:30%](images/36-planetarium_projector.jpg)
+![bg right:30%](images/35-planetarium_projector.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
+## Lab description
+Graded exercise to use Auditbeat for
+FIM/process activity logging and
+OpenSearch monitors for alerting.
+  
+For detailed instructions, see:  
+["resources/labs/beats/README.md"](%RESOURCES_ARCHIVE%).  
+  
+**Remember to download the latest version
+of the resources archive! ("log.zip")**
+
+![bg right:30%](images/35-planetarium_projector.jpg)
