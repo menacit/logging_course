@@ -46,7 +46,6 @@ In order to install Auditbeat and modify its configuration, establish a SSH conn
 - Ensure that the Auditbeat service is started at system boot
 - Setup a monitor in OpenSearch to generate an alert when files in "/opt/myapp" are modified
   - Configure the monitor to exclude changes in "/opt/myapp/cache"
-  - Configure the monitor to exclude changes made by the user "kai"
 
 
 ### Meritorious ("VG")
