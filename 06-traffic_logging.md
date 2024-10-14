@@ -37,8 +37,8 @@ allows us to implement
 **inspection-based logging**.  
 
 Freely available tools like
-**tcpdump** and **WireShark** are easy to use
-on your own computer or a server.
+**tcpdump** and **WireShark/TShark** are
+easy to use on your own computer/server.
 
 ![bg right:30%](images/06-wire_tunnel.jpg)
 
@@ -216,7 +216,10 @@ Formally/Openly standardized by IETF as
 **I**nformation
 e**X**port.  
 
-More or less the same as NetFlow.
+More or less the same as NetFlow.  
+  
+If you wanna play with it but don't have
+an "enterprise-grade" switch, try [softflowd](https://github.com/irino/softflowd).
 
 ![bg right:30%](images/06-space_walk.jpg)
 
