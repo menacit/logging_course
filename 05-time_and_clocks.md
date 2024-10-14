@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Time and clocks"
@@ -56,7 +56,7 @@ What kind of time?
 Most computers count number of seconds
 elapsed since **the first of January 1970 (UTC)**.  
 
-Commonly called "**UNIX time**" "**Epoch**".  
+Commonly called "**UNIX time**"/"**Epoch**".  
 
 Converted into local time/calendar date
 by OS/applications.
@@ -106,7 +106,7 @@ Important to keep track of if we're operating internationally.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
 ## Daylight savings
-~~Everyone~~ Many of us loves a bit of sun,
+~~Everyone~~ Many of us love a bit of sun,
 but hates being confused.  
 
 Not everyone changes at the same time.  
@@ -121,6 +121,9 @@ Let's make it more exciting!
 
 Some time zones differ by
 **30 or 45 minutes**.
+
+Some places don't even want
+24 hour days.
 
 ![bg right:30%](images/05-penguins_and_bears.jpg)
 
@@ -259,7 +262,7 @@ for symmetric authenticated encryption.
   
 Extension to NTP, like HTTPS for HTTP.  
 
-Limited software support and more
+Limited software support and a bit more
 resource intensive than plain NTP.
 
 ![bg right:30%](images/05-pad_locks.jpg)
@@ -368,9 +371,13 @@ Anycast from several redundant sites
 spread over Sweden.  
 
 Relies on an open-source FPGA-based
-for NTP and NTS.
+for NTP and NTS. Offers PTP.
 
 ![bg right:30%](images/05-cg_16.jpg)
+
+<!--
+https://www.netnod.se/sites/default/files/2022-06/NTS-FPGA-presentation-christer.pdf
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jesse James (CC BY 2.0)" -->

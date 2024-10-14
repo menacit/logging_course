@@ -45,11 +45,19 @@ How logging and other observability tools helps us audit activity in IT systems.
 
 ![bg right:30%](images/00-green_cables.jpg)
 
+<!--
+Understand the run-time behavior and activity in modern IT systems.
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
 Detect and investigate malicious activity.
 
 ![bg right:30%](images/00-clover_face.jpg)
+
+<!--
+Attacks or misuse. Fundamental for TD and IR.
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas A. Tonelli (CC BY 2.0)" -->
@@ -57,11 +65,19 @@ Centrally collect and analyze log data from a wide range of sources.
 
 ![bg right:30%](images/00-abandoned_farmhouse.jpg)
 
+<!--
+Discover the benefits of centralized collection, normalization and analysis of log data.
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pedro Mendes (CC BY-SA 2.0)" -->
 Learn how logging helps us comply with rules and regulations.
 
 ![bg right:30%](images/00-arecibo.jpg)
+
+<!--
+Essential part to comply with most IT related laws/compliance schemes.
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
@@ -77,7 +93,15 @@ Dip our toes into benefits in other areas, such as cost savings and increased av
 - The Linux shell
 - Docker and Docker Compose
 
+You'll also need access to a Linux system
+(any distribution), web brower and SSH client.
+
 ![bg right:30%](images/00-construction.jpg)
+
+<!--
+With the exception of the first lab, remote system provided by teacher.
+Use Vagrant or whatever you're comfortable with to setup a lab system.
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jason Thibault (CC BY 2.0)" -->
@@ -138,7 +162,7 @@ The course wouldn't be available if it wasn't for financial support - Thanks!
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% George N (CC BY 2.0)" -->
 ## Free as in beer and speech
-Is anything unclear? Got ideas for improvements? Don't fancy the animals in the slides?  
+Is anything unclear? Got ideas for improvements? Don't fancy the images in the slides?  
   
 Create an issue or submit a pull request to
 [the repository on Github](https://github.com/menacit/logging\_course)!

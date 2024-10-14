@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Vocabulary and basics"
@@ -38,6 +38,8 @@ for hundreds of years.
 ![bg right:30%](images/01-ship_wreck.jpg)
 
 <!--
+The term "log book" is old. Use as anectode:
+
 https://upload.wikimedia.org/wikipedia/commons/a/a8/Speyer_Handlog.jpg
 -->
 
@@ -46,6 +48,14 @@ https://upload.wikimedia.org/wikipedia/commons/a/a8/Speyer_Handlog.jpg
 The airplane "black box" is another good example.
 
 ![bg right:30%](images/01-airplane_wreck.jpg)
+
+<!--
+- Confusing name, far from black!
+- Semi-automated system used to record what happened in/to the airplane.
+- Help us understand accidents and prevent future ones.
+
+Segue: We also use logging in computer systems...
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas A. Tonelli (CC BY 2.0)" -->
@@ -57,11 +67,25 @@ The airplane "black box" is another good example.
 
 ![bg right:30%](images/01-birch_forest.jpg)
 
+<!--
+- Review logs for IoCs and undesired activity.
+- Just the knowledge of that activity is monitored may deter undesired activity.
+- Help us understand how things actually work, why they don't and where to improve
+- Behavior of users/customers in our services
+- GDPR/PCI DSS requires logging of access to PII/credit card information
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas A. Tonelli (CC BY 2.0)" -->
 **What makes a good log entry/event?**
 
 ![bg right:30%](images/01-birch_forest.jpg)
+
+<!--
+- Depends on what type of log we are talking about.
+
+Segue: Two broad categories...
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
@@ -71,12 +95,26 @@ happening in a system.
 
 ![bg right:30%](images/01-abandoned_factory.jpg)
 
+<!--
+- Why is the system inaccessible?
+- What is causing request latency?
+- Typically helps developers, system administrators and business analysists
+- A good operational log helps these people do their jobs
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% A Loves DC (CC BY 2.0)" -->
 ## Audit logs
 Enables us to "reenact" events of interest.
 
 ![bg right:30%](images/01-steel_w.jpg)
+
+<!--
+- Primarily interesting for security related roles.
+- Play detective with red strings and a "crazy wall"
+
+Segue: So what makes a good audit log entry?
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% A Loves DC (CC BY 2.0)" -->
@@ -87,6 +125,11 @@ Enables us to "reenact" events of interest.
 **W**hy?
 
 ![bg right:30%](images/01-steel_w.jpg)
+
+<!--
+- The 5 W:s of audit logging
+- Each log entry should ideally answer these questions.
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Yellowcloud (CC BY 2.0)" -->
@@ -100,6 +143,12 @@ solutions like the **N**etwork **T**ime **P**rotocol help.
 
 ![bg right:30%](images/01-nixie_tube.jpg)
 
+<!--
+- Essential for putting events in cronological order
+- In distributed systems, accurate time is crucial for correlation of events
+- More about time/clocks later!
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->
 ## Who?
@@ -108,6 +157,14 @@ Which human/computer/application caused the event?
 Preferably backed by strong authentication.
 
 ![bg right:30%](images/01-lemur.jpg)
+
+<!--
+- Useful context for events
+- Which user/system administrator could I ask/question about the happening
+- Is it resonable that a guy in sales is trying to access IT management systems?
+- How about a recently fired (disgruntled) employee who are trying to download all shared files?
+- Goes without saying, but the better the authentication the more we can trust this
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
@@ -118,15 +175,31 @@ May communicate why the log event might be of interest.
 
 ![bg right:30%](images/01-bismuth.jpg)
 
+<!--
+- "Failed to authenticate against database due to wrong password"
+- "Could not delete file due to insufficient privileges"
+- "Safe-door unlocked"
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jason Thibault (CC BY 2.0)" -->
 ## (from) Where?
 Information related to the location of the event causer.  
 
 Name of room/building, GPS coordinates,
-phone number, IP address...
+phone number, IP address, device identifier...
 
 ![bg right:30%](images/01-arial_photo.jpg)
+
+<!--
+- Event causer == human/computer
+- Help us put to make sense of the event
+- Is it resonable that Janne is trying to access their email from Murmansk?
+- Was the action performed from an IP address or computer controlled by the organization?
+- Can't always trust this information
+
+Segue: And lastly... why?
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pedro Mendes (CC BY-SA 2.0)" -->
@@ -139,11 +212,27 @@ Many systems, such as electronic health journals, require this to minimize/detec
 
 ![bg right:30%](images/01-raccoon.jpg)
 
+<!--
+- Searches in the police data registry
+- Ticket ID/Documentation for why a firewall exception was added
+- May not be provided by a human, but rather another system to make sense of events
+- "This database entry was deleted due to user X performing action Y in system Z"
+
+Segue: Now that we know what should be in the audit log entry, how do we present the info?
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jonathan Torres (CC BY 4.0)" -->
 Preferably readable by man and machine alike!
 
 ![bg right:30%](images/01-cyborg.jpg)
+
+<!--
+- These logs will most likely be monitored by computers and analyzed by humans
+- Clear separation of individual events
+- Clear separation of the 5 W:s, should be easy to differentiate betwen when, what...
+- More about different log formats and their pros/cons late
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->
@@ -153,22 +242,41 @@ Many systems don't differentiate between them.
 
 ![bg right:30%](images/01-window_cleaners.jpg)
 
+<!--
+- Some type of events are hard to categorize.
+- An application's permission failure to access a database may be of interest of both ops and sec
+- Often all logs are written to the same file/database table
+- A large part of the job in a SOC is filtering logs for relevant events
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
 **How do we implement logging?**
 
 ![bg right:30%](images/01-goggles_streetart.jpg)
 
+<!--
+We know what we want, how do we actually get ahold of these logs?
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Johannes P1hde (CC BY 2.0)" -->
 ## Inspection-based 
 Behavior of non-cooperating applications/systems are observed by an external application.  
 
-Network traffic sniffing, syscall interception, resource consumption monitoring...  
+Network traffic sniffing, raw database queries,
+syscall interception, resource consumption...  
   
 Doesn't require (costly) changes to applications/systems.
 
 ![bg right:30%](images/01-camera_shutter.jpg)
+
+<!--
+- Sometimes known as "black box observability" (not to be confused with airplanes)
+- Useful for legacy systems who haven't been designed to produce desired logs
+
+Segue: Quite low-level, may be hard to answer W:s except when and where....
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
@@ -181,11 +289,23 @@ Requires that the application provides trustworthy information.
 
 ![bg right:30%](images/01-factory.jpg)
 
+<!--
+- The application
+- Prefered, but may be costly/very hard to implement
+- Requires cooperation from software/system developer
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Randy Adams (CC BY-SA 2.0)" -->
 **Who is looking at the logs?**
 
 ![bg right:30%](images/01-abstract_pattern.jpg)
+
+<!--
+- As we've talked about audit logging, security personnel are a given consumer
+
+Segue: But there are also others who are interested...
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Todd Van Hoosear (CC BY-SA 2.0)" -->
@@ -209,6 +329,10 @@ monitor logs to detect malicious activity.
 
 ![bg right:30%](images/01-barbwire.jpg)
 
+<!--
+- Let's be a bit more specific
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% IAEA (CC BY 2.0)" -->
 ## Data analysts and scientists
@@ -221,6 +345,11 @@ Helps with A/B testing and understanding of user behavior.
 Improve operations or sell to third-parties.
 
 ![bg right:30%](images/01-fusion_equipment.jpg)
+
+<!--
+- A/B testing == What effect did change X have on metrix Y?
+- Some businesses make their living on selling user behavior data to others
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
@@ -337,6 +466,10 @@ machines looking at logs?
 
 ![bg right:30%](images/01-soldering_robot.jpg)
 
+<!--
+- Why is it so neat to have computers monitor the logs for us?
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Torkild Retvedt (CC BY-SA 2.0)" -->
 ## Alerting
@@ -346,6 +479,10 @@ Once identified, automated actions can be taken or humans notified for manual an
 
 ![bg right:30%](images/01-cameleon.jpg)
 
+<!--
+Example: Fail2Ban, automated order of disks based on total utilization
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Mauricio Snap (CC BY 2.0)" -->
 ## Anomaly detection
@@ -353,7 +490,7 @@ Humans are quite good at identifying things out of the ordinary.
   
 They have neither the time nor attention span to analyze the logs from modern IT environments.  
   
-Machine learning can help us, especially with centralized logging.
+Algorithms and **M**achine **L**earning can help us, especially with centralized logging.
 
 ![bg right:30%](images/01-eye.jpg)
 
@@ -383,9 +520,29 @@ SIEMs commonly serve as a source for...
 <!-- _footer: "%ATTRIBUTION_PREFIX% Chris Dlugosz (CC BY 2.0)" -->
 Observability is not just logging.  
 
-Metrics and traces are other examples.
+Metrics are other examples.
+
+Typically not used for security purposes.
 
 ![bg right:30%](images/01-abstract_laser.jpg)
+
+---
+```
+$ curl http://server.example.com:9100/metrics | grep "errs_total"
+
+# HELP node_network_receive_errs_total Network device statistic receive_errs.
+# TYPE node_network_receive_errs_total counter
+node_network_receive_errs_total{device="enp2s0"} 10185
+
+# HELP node_network_transmit_errs_total Network device statistic transmit_errs.
+# TYPE node_network_transmit_errs_total counter
+node_network_transmit_errs_total{device="enp2s0"} 1249
+```
+
+<!--
+- Usually simple counters or gauges
+- Scraped and stored in a time-series database
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Thierry Ehrmann (CC BY 2.0)" -->
@@ -442,7 +599,7 @@ Some examples are...
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jeena Paradies (CC BY 2.0)" -->
 ## Cost of analysis
-Someone needs to analyze/act on the collected data.
+Someone needs to analyze/act on the collected data/alerts.
 
 Expensive and hard to recruit, especially for 24/7 operations.  
   

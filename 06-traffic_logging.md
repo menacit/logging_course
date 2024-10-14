@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Network traffic logging"
@@ -141,7 +141,8 @@ Often extended to act as an
 
 Don't just detect attacks, block them.  
 
-Sounds great, but introduces some risks.
+Sounds great, but introduces some
+availability risks.
 
 ![bg right:30%](images/06-lion.jpg)
 

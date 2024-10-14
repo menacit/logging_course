@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Analysis with Coreutils"
@@ -611,7 +611,9 @@ add the "**-a**" option to tee.
 Learning the ins and outs of Coreutils are a worth-while investment.  
 
 When in doubt,
-use the **man** and **info** commands.
+use the **man** and **info** commands.  
+
+`grep -F == grep --fixed-strings`
 
 With time, you'll grow your own toolbox for efficiently working with data filtering and analysis.
 

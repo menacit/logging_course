@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - Coreutils analysis lab
 -->
@@ -28,8 +28,8 @@ disarray:
 - **"www-3.log"**: Timestamps are in CEST and the clock is correct
   
 In order to complete the lab, the student should adjust/synchronize timestamps, merge/sort the log 
-files and produce a timeline output file for a specified user matching the following format:
-> $DATE $IP_ADDRESS $HTTP_METHOD $PATH $STATUS_CODE
+files and produce a timeline output file for a **specified user** matching the following format:
+> $DATE $TIME $IP_ADDRESS $HTTP_METHOD $PATH $STATUS_CODE
 
 To further clarify, the output below contains an example of this format:
 ```
@@ -48,8 +48,8 @@ and "grep").
 ### Mandatory ("G")
 - Adjust timestamps in "www-2.log" to account for clock skew 
 - Adjust timestamps in "www-3.log" to account time zone difference
-- Merge and sort web server log files
-- Generate a timeline output file for the user "kim" ("r_user" field in logs)
+- Merge and sort web server log files into one file
+- Generate a timeline output file for the user "kim" ("r\_user" field in logs)
 
 
 ### Meritorious ("VG")
