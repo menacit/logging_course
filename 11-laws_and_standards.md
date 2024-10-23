@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Laws and standards"
@@ -39,9 +39,15 @@ to log security/privacy related
 activity, either directly or indirectly.
 
 We'll limit our scope to
-IT related laws/standards.
+IT related laws/compliance standards.
+
+For more details, check out
+[our "threat intelligence" course](https://github.com/menacit/threat_intelligence_course).
 
 ![bg right:30%](images/11-cyberpunk_wall.jpg)
+
+<!--
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
@@ -58,6 +64,9 @@ Especially tricky/costly considering the wide definition of personal data.
 
 ![bg right:30%](images/11-retro_computer.jpg)
 
+<!--
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Asparukh Akanayev (CC BY 2.0)" -->
 ## NIS(2)
@@ -72,6 +81,9 @@ without logging is near impossible.
 
 ![bg right:30%](images/11-power_line.jpg)
 
+<!--
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Bill Badzo (CC BY-SA 2.0)" -->
 ## DORA
@@ -85,6 +97,9 @@ Puts requirements on monitoring, logging and incident reporting.
 Similar rules exist in most finance/banking regulation.
 
 ![bg right:30%](images/11-keenan_building.jpg)
+
+<!--
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
@@ -105,6 +120,9 @@ Longer retention may be illegal.
 
 ![bg right:30%](images/11-log_book.jpg)
 
+<!--
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Alan Levine (CC0 1.0)" -->
 ## PCI DSS
@@ -120,6 +138,9 @@ Scope managed by using an isolated
 
 ![bg right:30%](images/11-payphone.jpg)
 
+<!--
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Quinn Dombrowski (CC BY-SA 2.0)" -->
 ## ISO 27001
@@ -127,13 +148,16 @@ Requires regular review of
 security-related events from
 _sensitive_ systems.
 
-NTP or equivalent solution is
-mandatory.
+NTP or equivalent solution for
+accurate time is mandatory.
 
 For details, check out
 A.12.4: "_Logging and monitoring_".
 
 ![bg right:30%](images/11-skeleton.jpg)
+
+<!--
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pumpkinmook (CC BY 2.0)" -->
@@ -144,10 +168,15 @@ IT systems, regardless of ownership.
 
 Be especially considerate of
 legitimate interest when working
-with logs from sources like **EDR**
-tools, mail servers and SSL interceptors.
+with logs from sources like
+**E**nd-point **D**etection and **R**espone tools,
+mail servers, HTTP(S) proxies and
+SSL/TLS interceptors.
 
 Ensure that signed and understood
-usage polices are in place to CYA.
+usage polices are in place to _CYA_.
 
 ![bg right:30%](images/11-glitch_face.jpg)
+
+<!--
+-->

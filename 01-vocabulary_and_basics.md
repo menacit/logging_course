@@ -431,7 +431,8 @@ What are the benefits?
 ## Ease correlation
 Almost every network connected device can produce logs.
 
-Manually checking all is time-consuming (see "expensive").  
+Manually checking everything is
+time-consuming (see "expensive").  
 
 Some insights require a wider-perspective than individual systems.
 

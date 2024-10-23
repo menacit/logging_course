@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -53,7 +53,8 @@ using tap/mirror/span functionality in switches.
   
 Easy to implement **inspection-based** logging.  
 
-Requires lots computing resources and storage.  
+Requires lots computing resources and storage,
+encrypted traffic is a challenge.  
 
 **NIDS** are a middle-ground that just looks for
 suspicious traffic using IoCs/rulesets.  
@@ -79,21 +80,26 @@ both **NOC** and **SOC**.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% ETC Project (CC0 1.0)" -->
-## Data analysis with Coreutils
 UNIX-like systems have historically populated
 **/var/log** with a bunch of text files.  
 
 GNU Coreutils provides several useful tools 
 for text data filtration/extraction.  
 
-- **_grep_**: Include/exclude lines matching pattern
 - **cut**: Split/filter lines into distinct fields
 - **wc**: Count lines/bytes of input data
 - **uniq**: Basic data aggregation
 - **tr**: Various clean-up tasks
 - **date**: Voodoo-magic with date time
 
+And let's not forget GNU grep!
+_("sed" is not a part of Coreutils)_
+
 ![bg right:30%](images/09-computer_man.jpg)
+
+<!--
+https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kristoffer Trolle (CC BY 2.0)" -->

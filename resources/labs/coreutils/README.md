@@ -94,6 +94,7 @@ Besides "grep", the list below contains tools from Coreutils that may be useful 
 - wc
 
 ### Links
+- [List of Coreutils commands](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands)
 - [GNU Coreutils website](https://www.gnu.org/software/coreutils/)
 - [GNU grep website](https://www.gnu.org/software/grep/)
 - [Cheat sheet: date](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
