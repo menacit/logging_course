@@ -63,6 +63,10 @@ for advanced field extraction.
 
 ![bg right:30%](images/14-old_computers.jpg)
 
+<!--
+- Origins in 50s, use heavily in computers since late 60s
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% C. Watts (CC BY 2.0)" -->
 **Let's take it for a spin!**
@@ -152,6 +156,20 @@ Admin
 ```
 
 ---
+## Repetition ranges and negation
+```
+$ cat auth.log
+
+23:51 backup logged in
+9:52 janne logged in
+11:52 monitor logged in
+
+$ cat auth.log | pcregrep --only-matching=1 \
+  '^(?<time>\d{1,2}:\d{1,2}) (?<user>(?!backup|monitor).+) logged in$'
+
+janne
+```
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Wolfgang Stief (CC0 1.0)" -->
 ## Advanced features
 - Multi-line matches
@@ -187,6 +205,9 @@ must end, case insensitive
 Regardless of its imperfections,
 mastering regex is a very
 worthwhile investment.  
+
+A good resource is [Deeecode's
+"Simplified Regular Expressions" course](https://simpleregex.dev/)
 
 Just remember to also include
 negative test cases.

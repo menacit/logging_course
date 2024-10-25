@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Formats and protocols"
@@ -198,6 +198,11 @@ which relies on an odd mix of
 CSV and key-values.
 
 ![bg right:30%](images/16-satellite_photo.jpg)
+
+<!--
+https://www.elastic.co/docs/current/en/integrations/cef
+https://www.microfocus.com/documentation/arcsight/arcsight-smartconnectors-8.3/cef-implementation-standard/Content/CEF/Chapter%201%20What%20is%20CEF.htm
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Edenpictures (CC BY 2.0)" -->

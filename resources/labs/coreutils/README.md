@@ -40,7 +40,8 @@ To further clarify, the output below contains an example of this format:
 
 All tools required to complete the assignment should be available on most Linux-based systems.
 If not, install the software packages for GNU Coreutils and GNU grep (commonly called "coreutils"
-and "grep").
+and "grep"). The student may only utilize the bash/sh shell, GNU grep and applications from the
+GNU Coreutils package to complete the lab tasks (see "Links" section below for further guidance).
 
 
 ## Tasks
@@ -49,7 +50,7 @@ and "grep").
 - Adjust timestamps in "www-2.log" to account for clock skew 
 - Adjust timestamps in "www-3.log" to account time zone difference
 - Merge and sort web server log files into one file
-- Generate a timeline output file for the user "kim" ("r\_user" field in logs)
+- Generate a timeline output file for the user "kim" ("r\_user" and "u=" fields in logs)
 
 
 ### Meritorious ("VG")
@@ -69,6 +70,18 @@ If the extraction process has been implemented in an automated script, in-line c
 to describe executed commands. Optionally, speculate what happened during the incident and what the
 hacker's motivation might have been (bonus, just for fun, not graded).  
   
+Before submitting the report/script for review, make sure to execute the assistant validation
+script to verify that the commands/script produces output matching the exercise requirements:
+
+```
+$ ./output_verifier.sh your_timeline_file_for_kim.log
+
+INFO: Checking number of lines in specified timeline file...
+INFO: Checking format of specified timeline file...
+INFO: Checking if specified timeline file matches any of known correct hashes...
+SUCCESS: You got the correct timeline - time to submit your script for review! :-D
+```
+
 The lab report should be provided as a plain text file (".txt"), Markdown document or PDF file.
 Upload the lab report and related files, such as the timeline result file(s) and parsing script,
 to %REPORT_TARGET%.

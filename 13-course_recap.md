@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -50,7 +50,7 @@ Most solutions available utilize "push-based"
 collection and centralized parsing.  
 
 **Index-time parsing** helps query performance,
-but increases onboarding and storage costs.  
+but increases onboarding and storage costs\*.  
 
 **Search-time parsing** adds a per-query cost
 but increases flexibility and
