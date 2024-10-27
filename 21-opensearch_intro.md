@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch introduction"
@@ -88,8 +88,8 @@ on the ELK stack a bit grumpy.
 The OpenSearch project was formed
 to provide an open-source fork.  
 
-Developed by the community, but
-currently governed by Amazon.
+Developed by the community, supported
+by the [OpenSearch Software Foundation](https://foundation.opensearch.org/).
 
 ![bg right:30%](images/21-desert_hut.jpg)
 

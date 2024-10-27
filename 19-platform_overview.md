@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Platform overview"
@@ -33,9 +33,11 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Counselman Collection (CC BY-SA 2.0)" -->
-Many products and services are available for centralized logging.  
+Many products and services are available
+for centralized logging.  
   
-Let's take a look at some of them and their pros/cons.
+Let's take a look at some of them
+and their pros/cons.
 
 ![bg right:30%](images/19-log_truck.jpg)
 
@@ -45,8 +47,7 @@ Let's take a look at some of them and their pros/cons.
 Released by Micro Focus in
 early 2000s.  
 
-Defined the SIEM product
-category.  
+Defined the SIEM product category.  
 
 Artifacts such as the
 **C**ommon **E**vent **F**ormat
@@ -75,22 +76,21 @@ Recently acquired by Cisco.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Tim Green (CC BY 2.0)" -->
-## Elastic Stack
+## Elastic / "ELK" stack
 **E**lasticsearch, **L**ogstash, **K**ibana
 \+ Beats (logging agents).  
 
 Index-time parsing backed by
 very capable search engine.
 
-Resource hungry, but easy to
-scale horizontally.  
+Resource hungry, but quite easy to scale.  
 
 Support and plugins for "enterprise"
 features (like auth and TLS) available
 from Elastic.  
 
-Elasticsearch was  closed-sourced in 2021,
-resulting in "OpenSearch" fork.
+Closed-sourced in 2021, resulting in
+"OpenSearch" fork. Became open again in 2024.
 
 ![bg right:30%](images/19-moss_face.jpg)
 
@@ -103,7 +103,7 @@ batteries included.
 Uses ~~Elasticsearch~~ OpenSearch
 under the hood.  
 
-Less capable than Elastic stack,
+Less capable than the Elastic stack,
 but easier to setup/manage.  
 
 Closed-sourced in 2021.

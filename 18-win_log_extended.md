@@ -53,11 +53,12 @@ Released in 2014 as a part
 of Microsoft "Sysinternals".  
 
 Hooks into Windows kernel
-to intercept activity.  
+to intercept activity, just like many
+**E**nd-point **D**etection and **R**esponse tools do.
 
 Gratis, but very capable!  
 
-No support provided by
+No official support provided by
 Microsoft, sadly.
 
 ![bg right:30%](images/18-eagle.jpg)
@@ -170,3 +171,13 @@ User: "LAB-LOG-WIN-1\Administrator"
 
 ---
 ![bg center:100%](images/18-win_ps_audit_log_log.png)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Tofoli Douglas (CC0 1.0)" -->
+## Closing thoughts
+While many third-party tools exist to aid
+threat detection and incident response on
+MS Windows, we can get far for free with
+official tools and a bit of configuration.
+
+![bg right:30%](images/18-windows_mountain.jpg)

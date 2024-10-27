@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Windows logging"
@@ -42,7 +42,8 @@ The way it does this is however slightly different.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Ted Eytan (CC BY-SA 2.0)" -->
 ## Event logging subsystem
-Provides APIs for structured OS and application logging.  
+Provides APIs for structured _(key-values)_
+operating system and application logging.  
 
 Handles event retention/rotation.
 
@@ -50,7 +51,7 @@ Stores logs on disk in a custom binary format, exposed to consumers as XML.
   
 Supports log forwarding.  
   
-Tries to solve many of the same problems as syslog.
+Tries to solve many of the same problems as syslog daemons on Linux/UNIX.
 
 ![bg right:30%](images/17-teardown.jpg)
 
