@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch usage basics"
@@ -162,7 +162,7 @@ $ curl \
 <!-- _footer: "%ATTRIBUTION_PREFIX% Randy Adams (CC BY-SA 2.0)" -->
 ```
 $ curl \
-  "${BASE_URL}/my_index/_doc?pretty" \
+  "${BASE_URL}/myvulns/_doc/CVE-2023-36036/_update" \
   --request POST \
   --header "Content-Type: application/json" \
   --data '{"doc": {"cvss_score": 7.5}}'
@@ -170,10 +170,11 @@ $ curl \
 
 ```json
 {
-  "_index" : "my_index",
-  "_id" : "OHNm64sBQrucVyA5JRdK",
-  "_version" : 1,
-  "result" : "created",
+  "_index" : "myvulns",
+  "_type" : "_doc"
+  "_id" : "CVE-2023-36036",
+  "_version" : 2,
+  "result" : "updated",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -188,7 +189,10 @@ $ curl \
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jeena Paradies (CC BY 2.0)" -->
-**Let's get searching!**
+Let's get searching with
+**L**ucene **Q**uery **L**anguage!  
+  
+_(AKA "Query DSL")_
 
 ![bg right:30%](images/22-stones.jpg)
 
@@ -607,10 +611,17 @@ $ curl "${BASE_URL}/myvulns/_mapping?pretty" --request GET
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Wendelin Jacober (CC0 1.0)" -->
-OpenSearch supports ways to express queries.  
+Besides **L**ucene **Q**uery **L**anguage,
+OpenSearch provides plugins for other ways
+to express your searches/aggregations.  
 
-Depending on your preferences, you can utilize
-**Lucene Query Language**, **DQL**, **PPL** or **SQL**.
+Depending on your preferences, you can use
+**D**ashboard **Q**uery **L**anguage,
+**P**ipe **P**rocessing **L**anguage or
+**S**tructured **Q**uery **L**anguage.  
+
+Under the hood, these get translate to
+LQL with varying degrees of success.
 
 ![bg right:30%](images/22-phone_booth.jpg)
 

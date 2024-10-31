@@ -230,7 +230,8 @@ and quite easy to scale!
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->
 ## Data storage
-**Documents** are grouped in **indices**.
+**Documents** are grouped in **indices**
+(plural of "**index**").
 
 **Documents** in an **index** are
 stored in one or more **shards**.  

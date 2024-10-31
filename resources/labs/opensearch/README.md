@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - OpenSearch query and visualization lab
 -->
@@ -56,7 +56,7 @@ Each student should submit a lab report containing **at least** the following in
 - Search queries used in the lab and the motivation behind them
 - Link to the OpenSearch dashboard containing the data visualizations
   
-Optionally, it should describe changes made to the log parsing for SSH user extraction ("VG").  
+If applicable, it should describe changes made to the log parsing for SSH user extraction ("VG").  
   
 The lab report should be provided as a plain text file (".txt"), Markdown document or PDF file.
 Upload the lab report and any related files, such as modified Logstash pipeline configuration,
@@ -69,10 +69,12 @@ to %REPORT_TARGET%.
 In order to aid testing of search queries, events such as failed logins can be triggered by the
 student by attempting to remotely access "linux.%LAB_DOMAIN%" and "windows.%LAB_DOMAIN%".
 
+
 ### Testing Grok patterns
 When developing Grok patterns for data matching and/or extraction, testing them against samples
 of data may be useful. The web based ["Grok Debugger"](https://grokdebugger.com/) can be used to
 greatly aid the development processes, as it doesn't require feeding/restarting Logstash.
+
 
 ### Modifying Logstash configuration
 The Logstash pipeline configuration is located in "/opt/lab_env/logstash.conf" on the lab server
@@ -83,6 +85,7 @@ and issue the following command to restart Logstash:
 ```
 $ docker compose restart logstash 
 ```
+
 
 ### Debugging OpenSearch components
 In order to monitor the runtime status of OpenSearch, OpenSearch Dashboards and Logstash, open a
@@ -100,6 +103,7 @@ appending the service/container name:
 $ docker compose logs logstash
 ```
 
+
 ### Resetting lab environment
 If the student for whatever reason desires to restore the lab environment to its initial state,
 open a SSH connection to "shell.%LAB_DOMAIN%", enter the directory "/opt/lab_env" and execute the
@@ -113,10 +117,12 @@ $ cp .index_template.json.original .index_template.json
 $ docker compose up --detach
 ```
 
+
 ### Finding more documentation/examples
 As mentioned during the lectures, OpenSearch is a fork of Elasticsearch/Kibana. While the projects
 have started to diverge, most tutorials and documentation describing how to solve problems in
 Elasticsearch also applies to OpenSearch.
+
 
 ### Links
 - [Query DSL: "Match" query](https://opensearch.org/docs/latest/query-dsl/full-text/match/)
