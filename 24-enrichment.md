@@ -71,7 +71,7 @@ how to implement them in OpenSearch.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Asparukh Akanayev (CC BY 2.0)" -->
 Enrichment can be performed during
-ingestion or search-time.  
+ingestion or at search-time.  
 
 Like with field parsing, both have
 their pros/cons.  
@@ -94,17 +94,20 @@ Current relevance VS Historic accuracy.
 ![bg right:30%](images/24-polar_bear.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% OLCF at ORNL (CC BY 2.0)" -->
-## Beware of the cost
-Doing all that processing ain't free
-and will add latency.  
+```
+# Forward lookup
+$ host suspicious.example.com
 
-Increased query and storage costs.  
-  
-Complexity in ingestion pipelines
-increase the risk of disturbances.
+suspicious.example.com has address 93.184.215.14
+suspiciousexample.com has IPv6 address
+2606:2800:21f:cb07:6820:80da:af6b:8b2c
 
-![bg right:30%](images/24-data_center.jpg)
+# Reverse lookup
+$ host 93.184.215.14
+
+14.215.184.93.in-addr.arpa domain name pointer
+suspicious.example.com.
+```
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Mike Grauer Jr (CC BY 2.0)" -->
@@ -128,7 +131,7 @@ Erghh - less talk, more examples!
 if [source][ip] {
   translate {
     source => "[source][ip]"
-    target => "related_to_incident"
+    target => "ip_related_to_incident"
     dictionary_path => "/var/ioc/evil_ip.csv"
   }
 }
@@ -151,7 +154,7 @@ if [source][ip] {
   },
   {
     "exists": {
-      "field": "related_to_incident"
+      "field": "ip_related_to_incident"
     }
   }
 ]
@@ -162,7 +165,6 @@ if [source][ip] {
 ![bg right:30%](images/24-rainy_street.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% Jason Thibault (CC BY 2.0)" -->
 ```json
 [...]
 
@@ -173,13 +175,11 @@ if [source][ip] {
     "_score" : 1.0048822,
     "_source" : {
       "url" : "/internal/nuke_control.aspx",
-      "related_to_incident" : "Associated with Explum spear phishing campaign",
+      "ip_related_to_incident" : "Associated with Explum spear phishing campaign",
       "source" : {
         "ip" : "185.120.19.98",
       [...]
 ```
-
-![bg right:30%](images/24-rainy_street.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Bret Bernhoft (CC0 1.0)" -->
@@ -442,6 +442,19 @@ input {
 ```
 
 ![bg right:30%](images/24-forest_road.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% OLCF at ORNL (CC BY 2.0)" -->
+## Beware of the cost
+Doing all that processing ain't free
+and will add latency.  
+
+Increased query and storage costs.  
+  
+Complexity in ingestion pipelines
+increase the risk of disturbances.
+
+![bg right:30%](images/24-data_center.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% M. Zamani, ESO (CC BY 2.0)" -->
