@@ -37,8 +37,8 @@ your instance of OpenSearch Dashboards.
 
 Develop queries using **both** SQL and PPL
 to find/filter information about:
+- Web server requests from Chrome web browsers
 - Country and IP address for each failed Windows attempt login
-- Most common user-agents in web server logs grouped per country
 - Top 10 usernames observed during failed Windows login attempts
 
 Send SQL and PPL query strings to

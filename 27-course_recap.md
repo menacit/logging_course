@@ -212,6 +212,10 @@ or on a scheduled basis.
 Each approach has its own
 pros/cons.
 
+In our stack, enrighment is most
+commonly implemented in Logstash
+filter pipelines.
+
 ![bg right:30%](images/27-comet.jpg)
 
 ---
@@ -228,8 +232,22 @@ improve planning/prognostication
 and integrate with other systems
 using standardized formats.
 
+![bg right:30%](images/27-sinking_boat.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Graham Drew (CC BY 2.0)" -->
+## Alerting in OpenSearch
 Scheduled searches used for alerts
-are called "monitors" in OpenSearch.
+are called "monitors" in OpenSearch.  
+  
+"Triggers" can be used to configure
+different severity levels/thresholds
+(number of results/value of result).  
+
+"Composite monitor" check the status
+of other two or more other monitor,
+which can be used to minimize
+notification volume/interruptions.
 
 ![bg right:30%](images/27-sinking_boat.jpg)
 

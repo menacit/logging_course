@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Linux auditing"
@@ -38,7 +38,7 @@ security related log events and store
 them in text-files or syslog.
 
 **P**luggable **A**uthentication **M**odules
-provides logging of (most) logins.
+provides logging of (most) login attempts.
 
 Let's look at some more options for
 inspection-based auditing on Linux.
@@ -154,7 +154,7 @@ Designed to primarily monitor security related events.
 
 Generated audit records can be consumed by a user-space application for processing/storage.  
   
-Only supports one consumer at a time.
+Only supports one consumer at a time\*.
 
 ![bg right:30%](images/26-bird.jpg)
 
@@ -167,11 +167,18 @@ audit framework events.
 Provides "rule configuration" and
 logging to file/remote hosts.  
 
+Monitor system calls, file access
+and "various interesting things".
+  
 Performs basic event correlation,
 allowing user activity tracing
 even if tools like sudo are used.
 
 ![bg right:30%](images/26-bird.jpg)
+
+<!--
+https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/security_guide/sec-audit_record_types#sec-Audit_Record_Types
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pyntofmyld (CC BY 2.0)" -->
@@ -250,6 +257,16 @@ similar features due to its flexibility.
 
 ![bg right:30%](images/26-bees.jpg)
 
+<!--
+https://falco.org/docs/
+https://sysdig.com/blog/getting-started-writing-falco-rules/
+https://falcosecurity.github.io/rules/
+https://cilium.io/
+https://cilium.io/use-cases/protocol-visibility/
+https://github.com/gojue/ecapture
+https://github.com/Sysinternals/SysmonForLinux
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
 Many amazing, such wow!  
@@ -274,5 +291,13 @@ why something is happening.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jorge Franganillo (CC BY 2.0)" -->
 ## Wrapping up
+We'll play with auditbeat
+in the next lab.  
+
+If you can't wait, I recommend
+installing and configuring Falco
+to detect if a Docker container
+tries to spawn a shell/initiate
+a network connection.
 
 ![bg right:30%](images/26-forest.jpg)
