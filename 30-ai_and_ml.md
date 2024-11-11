@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: AI/ML"
@@ -212,17 +212,26 @@ If you wanna play around, check out the
 
 ![bg right:30%](images/30-abandoned_house.jpg)
 
+<!--
+https://opensearch.org/blog/semantic-search-solutions/
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
 ## Conversational searching
 Currently provided as experimental feature.  
 
-Integrates with OpenAI and Amazon Bedrock APIs.  
+Integrates with ChatGPT, Amazon Bedrock
+and Cohere (\$\$\$ but self-hostable) APIs.  
   
-Would be neat to see support for self-hostable
+Would be neat to see support for a free
 LLMs like [LLama 2](https://ai.meta.com/llama/) to aid querying of private data.
 
 ![bg right:30%](images/30-retro_monitor.jpg)
+
+<!--
+https://opensearch.org/docs/latest/search-plugins/conversational-search/
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Brendan J (CC BY 2.0)" -->
