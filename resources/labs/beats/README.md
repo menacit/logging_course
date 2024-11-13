@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - Auditbeat collection/analysis lab
 -->
@@ -62,7 +62,8 @@ Each student should submit a lab report containing **at least** the following in
 - Configuration made in OpenSearch to enable alerting
 - Screenshot or other proof of alert being triggered in OpenSearch
   
-Optionally, it should describe changes performed to implement process creation monitoring ("VG").  
+When applicable, it should describe changes performed to implement process
+creation monitoring ("VG").  
   
 The lab report should be provided as a plain text file (".txt"), Markdown document or PDF file.
 Upload the lab report and any related files, such as a copy of the Auditbeat configuration file,
@@ -78,6 +79,9 @@ to simulate relevant activity on the lab system:
 ```
 $ mock_activity_generator
 ```
+
+The script performs actions of interest as several test users, which should be detectable if
+appropriate configuration is in place.
 
 
 ### Using Filebeat for reference
@@ -124,9 +128,18 @@ $ sudo yamllint /etc/auditbeat/auditbeat.yml
 ```
 
 
+### Problems combining "file\_integrity" and "auditd" modules
+In auditbeat, the "file\_integrity" and "auditd" modules can't be enabled at the same time.  
+To avoid issues when completing the meritorious lab tasks, make sure to disable the
+"file\_integrity" module after results have been documented. FIM functionality can also be
+implemented by configuring "file system rules" in the "auditd" module configuration, but this
+is not required to complete tha lab exercise.
+
+
 ### Links
 - ["Monitors" manual](https://opensearch.org/docs/latest/observing-your-data/alerting/monitors/)
 - [Elastic Docs - Auditbeat reference](https://www.elastic.co/guide/en/beats/auditbeat/current/)
 - [Red Hat articles - "What is YAML?"](https://www.redhat.com/en/topics/automation/what-is-yaml)
 - [Auditd manual - audit.rules](https://man7.org/linux/man-pages/man7/audit.rules.7.html)
 - [Linux manual - "execve" system call](https://www.man7.org/linux/man-pages/man2/execve.2.html)
+- ["Composite monitors" manual](https://opensearch.org/docs/latest/observing-your-data/alerting/composite-monitors/)
