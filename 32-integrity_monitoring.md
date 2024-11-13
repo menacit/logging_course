@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Integrity monitoring"
@@ -119,7 +119,7 @@ managed by Microsoft, some support
 configuration of custom keys/CAs.  
 
 "Measured boot" is its upcoming sibling,
-focusing on logging executed code. 
+focusing on logging/hashing executed code. 
 
 ![bg right:30%](images/32-rusted_cards.jpg)
 
@@ -129,7 +129,7 @@ focusing on logging executed code.
 **I**ntegrity **M**easurement **A**rchitecture.  
 
 Monitors execution of programs and performs
-hashing of their content ("measurement")
+hashing of their content _("measurement")_
 before execution.  
 
 Can be used to verify runtime integrity and
@@ -140,7 +140,6 @@ applications are run.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pelle Sten (CC BY 2.0)" -->
-## TPM
 **T**rusted **P**latform **M**odule.  
   
 Common hardware chip (or CPU feature) capable
@@ -155,13 +154,18 @@ such as a disk encryption key, when a PCR
 contains specific value/measurement,
 as a boot/runtime integrity check.
 
+Even better: produce an attestation report!
+
 ![bg right:30%](images/32-padlocks.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kuhnmi (CC BY 2.0)" -->
 If you think this sounds cool/useful,
 checkout [Keylime](https://keylime.dev/) and the
-["System Transparency" project](https://www.system-transparency.org/).
+["System Transparency" project](https://www.system-transparency.org/).  
+
+You can also check out Joel's talk
+from SEC-T, which is [available on YouTube](https://youtu.be/vdj9Pr-6dq8).
 
 ![bg right:30%](images/32-kolibri.jpg)
 
@@ -171,10 +175,10 @@ checkout [Keylime](https://keylime.dev/) and the
 Integrity protection ain't just
 about basic FIMs.  
   
-TPM + Secure boot + IMA ~= <3  
-
 Usage of immutable systems
 surely simplifies monitoring
 of state changes.
+
+TPM + Measured boot + IMA ~= <3  
 
 ![bg right:30%](images/32-cyborg_streetart.jpg)

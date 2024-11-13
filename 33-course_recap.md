@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -37,8 +37,6 @@ style: |
 Applications on Linux commonly log
 security related events to syslog.
   
-PAM logs authentication attempts.  
-
 FIM software can be combined with
 "inotify" feature for efficiency
 and ability to detect reads.  
@@ -54,10 +52,8 @@ mainly due to its flexibility.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Sergei Gussev (CC BY 2.0)" -->
-## OpenSearch query languages
-In addition to the "Lucene Query Language",
-OpenSearch provides support for
-DQL, PPL and SQL.  
+OpenSearch provides support for queries
+using LQL, DQL, PPL and SQL.  
 
 DQL aims to be easy to use for filtering,
 but lack advanced aggregation features.  
@@ -68,6 +64,10 @@ SIEMs like Splunk.
 
 SQL provides a query language known by
 many developers and data scientists.
+
+DQL, PPL and SQL gets translated to LQL,
+with varying degrees of success and
+quality of error messages.
  
 ![bg right:30%](images/33-singapore_gardens.jpg)
 
@@ -93,7 +93,7 @@ semantic and conversational queries.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rob Hurson (CC BY-SA 2.0)" -->
 ## Instrumenting applications
-Use templating/data binding to reduce
+Usage of templating/data binding to reduce
 repetition and ease instrumentation process.  
 
 Usage of libraries capable of producing
