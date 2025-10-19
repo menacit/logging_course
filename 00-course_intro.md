@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Introduction"
@@ -94,7 +94,7 @@ Dip our toes into benefits in other areas, such as cost savings and increased av
 - Docker and Docker Compose
 
 You'll also need access to a Linux system
-(any distribution), web brower and SSH client.
+(any distribution), web browser and SSH client.
 
 ![bg right:30%](images/00-construction.jpg)
 
@@ -108,7 +108,7 @@ Use Vagrant or whatever you're comfortable with to setup a lab system.
 ## How we will do it
 - Lectures and Q&A
 - Group presentations
-- Labs
+- Graded labs
 - Continuous reflection
 - Quizzes and scored tests
 
@@ -165,7 +165,7 @@ The course wouldn't be available if it wasn't for financial support - Thanks!
 Is anything unclear? Got ideas for improvements? Don't fancy the images in the slides?  
   
 Create an issue or submit a pull request to
-[the repository on Github](https://github.com/menacit/logging\_course)!
+[the repository on GitHub](https://github.com/menacit/logging\_course)!
 
 ![bg right:30%](images/00-laser_1.jpg)
 

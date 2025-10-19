@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Vocabulary and basics"
@@ -261,7 +261,7 @@ We know what we want, how do we actually get ahold of these logs?
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Johannes P1hde (CC BY 2.0)" -->
-## Inspection-based 
+## "Inspection-based"
 Behavior of non-cooperating applications/systems are observed by an external application.  
 
 Network traffic sniffing, raw database queries,
@@ -286,6 +286,8 @@ Applications are responsible for producing log events when activity of interest 
 Less guesswork and more details/context compared to inspection-based logging.  
 
 Requires that the application provides trustworthy information.
+
+Sometimes tricky/costly to implement.
 
 ![bg right:30%](images/01-factory.jpg)
 
@@ -327,6 +329,8 @@ monitor logs to detect malicious activity.
 
 **I**ncident **R**esponders dig through historical logs to build timelines of threat actor actions.
 
+_(Likely your first job in the sector)_
+
 ![bg right:30%](images/01-barbwire.jpg)
 
 <!--
@@ -359,7 +363,7 @@ Improve operations or sell to third-parties.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
-## Pattern-based
+## "Pattern-based"
 Search for occurrence of strings/patterns that are of interest.  
 
 May be things like known error codes or
@@ -382,11 +386,30 @@ May be things like...
 ![bg right:30%](images/01-difference_engine.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Timothy J Toal (CC BY 4.0)" -->
+## "Anomaly-based"
+Surface log events that haven't been seen
+before or those that contain information
+which is "unusual".
+
+Relies heavily on automated detection,
+more about that later!
+
+![bg right:30%](images/01-m2_mirror_and_cell.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Wolfgang Stief (CC BY 2.0)" -->
+**How can we make our logs more useful?**
+
+![bg right:30%](images/01-dec_pdp_rack_row.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Thierry Ehrmann (CC BY 2.0)" -->
 ## Enrichment
 Automation may be used to extend log events with information that may aid in analysis.  
 
-Employee position/role, geographic IP lookups, domain occurrence in IoC lists...
+Employee position/role, system owner/purpose,
+geographic IP lookups, domain/address/file occurrence in IoC lists...
 
 ![bg right:30%](images/01-wireframe_head.jpg)
 
@@ -503,6 +526,8 @@ Centralized logging services often serve as the basis for a...
 **I**nformation and
 **E**vent
 **M**anagement system.
+  
+(Terms are often used interchangeably)
 
 ![bg right:30%](images/01-nyala.jpg)
 
@@ -514,6 +539,8 @@ SIEMs commonly serve as a source for...
 **O**rchestration,
 **A**utomation and
 **R**esponse systems.
+
+(SIEM \+ semi-automated handling)
 
 ![bg right:30%](images/01-groundhog.jpg)
 
@@ -578,10 +605,11 @@ Logs may contain
 **P**ersonally **I**dentifiable **I**nformation,
 credentials and other sensitive information.  
 
-That may be of interest to malicious actors.  
+That may be of interest to malicious actors,
+especially if centrailized.
 
 **Anonymization/Pseduonymization**
-may help, but are not a penicillina.
+may help, but are not a penicillin.
 
 ![bg right:30%](images/01-boarded_windows.jpg)
 

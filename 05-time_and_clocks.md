@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Time and clocks"
@@ -61,7 +61,7 @@ Commonly called "**UNIX time**"/"**Epoch**".
 Converted into local time/calendar date
 by OS/applications.
 
-Await the horrors of 2038!
+(Await the horrors of 2038!)
 
 ![bg right:30%](images/05-pdp.jpg)
 
@@ -74,7 +74,8 @@ In the late 1800s, physicists tried
 to properly define a second.  
 
 **Atomic clocks** measure the resonant
-frequency of atoms very precisely.  
+frequency of atoms very precisely,
+ain't [expensive\+\+ these days](https://github.com/Time-Appliances-Project/Time-Card).  
 
 Since 1968, **BIPM** defines it as
 \~9 billion frequency transitions of
@@ -103,6 +104,10 @@ Important to keep track of if we're operating internationally.
 
 ![bg right:30%](images/05-navigation_globe.jpg)
 
+<!--
+https://upload.wikimedia.org/wikipedia/commons/e/ec/World_Time_Zones_Map.svg
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
 ## Daylight savings
@@ -110,8 +115,11 @@ Important to keep track of if we're operating internationally.
 but hates being confused.  
 
 Not everyone changes at the same time.  
-  
+
 Many plan to get rid of it, few have succeeded. 
+
+...and some of those who've done it
+did it in a very annoying way.
 
 ![bg right:30%](images/05-boat_sundown.jpg)
 
@@ -122,8 +130,8 @@ Let's make it more exciting!
 Some time zones differ by
 **30 or 45 minutes**.
 
-Some places don't even want
-24 hour days.
+(Some places don't even want
+24 hour days!)
 
 ![bg right:30%](images/05-penguins_and_bears.jpg)
 
@@ -167,11 +175,17 @@ Let's meet
 ## tz database
 Dataset and reference code for working with international calendar time.  
 
-Continuously updated to match an ever-changing world.
+Continuously updated for an ever-changing world.
 
 Maintained by ICANN since 2011.
 
 ![bg right:30%](images/05-cloth_plot.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Joel Rangsmo (CC BY-SA 4.0)" -->
+Challenges solved?
+
+![bg right:30%](images/05-metal_kid_kicking_statue.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
@@ -181,8 +195,11 @@ Many different formats exist for dates and timestamps.
 Which part is the year, month and day?
 What time zone are we talking about?  
 
-Some are more/less readable by
-humans and machines alike.
+Some are more/less readable
+by humans and machines alike,
+like [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) and [ISO 8601](https://www.rfc-editor.org/rfc/rfc3339).
+
+(please use one of these!)
 
 ![bg right:30%](images/05-number_pad.jpg)
 
@@ -237,7 +254,7 @@ Mitigates clock drift/skew.
 - chrony
 - systemd-timesyncd
 
-Some only implement **SNTP**.
+Some only implement **S**imple **NTP**.
 
 ![bg right:30%](images/05-cooling_system.jpg)
 
@@ -245,7 +262,7 @@ Some only implement **SNTP**.
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nikki Tysoe (CC BY 2.0)" -->
 ## Weaknesses
 Plain-text protocol\* vulnerable
-to Man-In-The-Middle attacks.  
+to **M**an-**I**n-**T**he-**M**iddle attacks.  
 
 Precision typically limited
 to milliseconds.
@@ -299,11 +316,15 @@ atomic clocks tick to define...
 **T**ime
 **C**oordinated.
 
+(not a time zone, but \~matches
+GMT except no daylight savings)
+
 ![bg right:30%](images/05-vault_door.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Helsinki Hacklab (CC BY 2.0)" -->
-How does my time server know what the correct time is?  
+How does my time server know
+what the correct time is?  
 
 Ask another one perhaps?
 
@@ -314,7 +335,7 @@ Ask another one perhaps?
 ## Getting reference time
 - Dedicated signaling cable
 - Radio broadcast
-- Satellite navigation system (GNSS)
+- Satellite navigation system (GNSS, like GPS)
 - Locally connected atomic clock
 
 ![bg right:30%](images/05-tunnel.jpg)
@@ -387,3 +408,9 @@ Join the annual
 **Netnod Tech Meeting**!
 
 ![bg right:30%](images/05-party.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Wonderlane (CC BY 2.0)" -->
+**Questions and/or thoughts?**
+
+![bg right:30%](images/05-mechanical_sample_wall.jpg)
