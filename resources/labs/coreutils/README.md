@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - Coreutils analysis lab
 -->
@@ -28,7 +28,8 @@ disarray:
 - **"www-3.log"**: Timestamps are in CEST and the clock is correct
   
 In order to complete the lab, the student should adjust/synchronize timestamps, merge/sort the log 
-files and produce a timeline output file for a **specified user** matching the following format:
+files and produce a timeline output file in UTC for a **specified user** matching the following
+format:
 > $DATE $TIME $IP_ADDRESS $HTTP_METHOD $PATH $STATUS_CODE
 
 To further clarify, the output below contains an example of this format:
@@ -106,8 +107,15 @@ Besides "grep", the list below contains tools from Coreutils that may be useful 
 - uniq
 - wc
 
+### Ignore locally configured time zone
+When working with the "date" utility, it will assume that the input/output time zone is the same as
+the locally configured one on the student's device, unless specified. To disable this behavior,
+make sure to include the "--utc" command line flag when invoking the utility.
+
 ### Links
 - [List of Coreutils commands](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands)
 - [GNU Coreutils website](https://www.gnu.org/software/coreutils/)
 - [GNU grep website](https://www.gnu.org/software/grep/)
 - [Cheat sheet: date](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
+- [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
+- [HTTP URL character encoding](https://www.w3schools.com/tags//ref_urlencode.asp)

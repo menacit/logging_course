@@ -361,6 +361,10 @@ Improve operations or sell to third-parties.
 
 ![bg right:30%](images/01-chemical_plant.jpg)
 
+<!--
+Are we reading each log event, row for row? No.
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
 ## "Pattern-based"
@@ -586,6 +590,10 @@ Producing/storing/transferring log events requires CPU cycles, I/O operations, b
 May require more expensive hardware and impact user experience/performance.
 
 ![bg right:30%](images/01-resistors.jpg)
+
+<!--
+Fail open or closed? Auditd is an example
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Scott Merrill (CC BY-SA 2.0)" -->
