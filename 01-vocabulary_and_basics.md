@@ -408,6 +408,17 @@ more about that later!
 ![bg right:30%](images/01-dec_pdp_rack_row.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Joel Rangsmo (CC BY-SA 4.0)" -->
+## Normalization
+Massage log events from different sources
+to ensure that "field names", timestamps
+and similar are formatted the same way.
+
+Makes digging and correlation easier!
+
+![bg right:30%](images/01-metal_ribbons_around_tree.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Thierry Ehrmann (CC BY 2.0)" -->
 ## Enrichment
 Automation may be used to extend log events with information that may aid in analysis.  

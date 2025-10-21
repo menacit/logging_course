@@ -41,7 +41,7 @@ To further clarify, the output below contains an example of this format:
 
 All tools required to complete the assignment should be available on most Linux-based systems.
 If not, install the software packages for GNU Coreutils and GNU grep (commonly called "coreutils"
-and "grep"). The student may only utilize the bash/sh shell, GNU grep and applications from the
+and "grep"). The student may **only** utilize the bash/sh shell, GNU grep and applications from the
 GNU Coreutils package to complete the lab tasks (see "Links" section below for further guidance).
 
 

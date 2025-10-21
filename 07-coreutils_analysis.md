@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Analysis with Coreutils"
@@ -317,7 +317,7 @@ one three four five eight nine ten
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% The Preiser Project (CC BY 2.0)" -->
-Need to clean up your output?
+Need to clean up your input/output?
 
 **tr** may be able to help!
 
@@ -490,6 +490,17 @@ Wed Nov  1 05:47:00 PM UTC 2023
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
+### Convert to sane format
+```
+$ date -u --date "18:47 CET" --rfc-3339=s
+
+2023-11-01 17:47:00+00:00
+```
+
+![bg right:30%](images/07-pyramid.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
 ### Manually correct time skew
 ```
 $ date -u --date "09:50 UTC - 1 hour - 5 minutes"
@@ -533,11 +544,15 @@ Let's combine for-loops, cut and date!
 <!-- _footer: "%ATTRIBUTION_PREFIX% Quinn Dombrowski (CC BY-SA 2.0)" -->
 ## Looping in bash
 ```
-IFS=$'\n'
+$ cat fruits.txt
 
-for LINE in $(cat fruits.txt); do
-  echo "It's an ${LINE}"
-done
+apple
+banana
+
+$ IFS=$'\n'
+$ for LINE in $(cat fruits.txt); do
+    $ echo "It's an ${LINE}"
+$ done
 
 It's an apple
 It's an banana
@@ -554,14 +569,13 @@ $ cat clock_skewed_log.txt
 08:14=User "root" logged in
 08:15=User "anna" logged out
 
-IFS=$'\n'
-
-for LINE in $(cat clock_skewed_log.txt); do
-  TIMESTAMP="$(echo "${LINE}" | cut -d = -f 1)"
-  MESSAGE="$(echo "${LINE}" | cut -d = -f 2-)"
-  FIXED_TIMESTAMP="$(date -u --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%M")"
-  echo "${FIXED_TIMESTAMP}=${MESSAGE}"
-done
+$ IFS=$'\n'
+$ for LINE in $(cat clock_skewed_log.txt); do
+  $ TIMESTAMP="$(echo "${LINE}" | cut -d = -f 1)"
+  $ MESSAGE="$(echo "${LINE}" | cut -d = -f 2-)"
+  $ FIXED_TIMESTAMP="$(date -u --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%M")"
+  $ echo "${FIXED_TIMESTAMP}=${MESSAGE}"
+$ done
 
 08:59=User "root" logged in
 09:00=User "anna" logged out

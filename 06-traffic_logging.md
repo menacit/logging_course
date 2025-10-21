@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Network traffic logging"
@@ -66,6 +66,8 @@ Most enterprise-grade switches supports
 configuration of a **"span/mirror/tap"** port.  
 
 Just connect a computer and start sniffing.
+  
+(Works even if other hosts are owned!)
 
 ![bg right:30%](images/06-switches.jpg)
 
@@ -98,6 +100,8 @@ Require many CPU cycles and lots of storage I/O operations to handle gigabits of
 
 You'll also need quite a bit of disk space to store all that data.
 
+(\~43GB for each hour of 100Mbit/s)
+
 ![bg right:30%](images/06-machine_cables.jpg)
 
 ---
@@ -113,9 +117,21 @@ These interceptors require tricky and risky configuration changes on all network
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
-Full network capture and storage is limited to highly sensitive environments with limited traffic. 
+Full network capture and storage may
+be reasonable in highly sensitive
+environments with limited traffic. 
+
+Partly alleviate the costs by using
+solutions like [tc](https://www.man7.org/linux/man-pages/man8/tc.8.html) and [(e)BPF](https://ebpf.io/what-is-ebpf/) filters
+to minimize processing/storage.
 
 ![bg right:30%](images/06-punchtape.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Michael Garlick (CC BY-SA 2.0)" -->
+Any alternatives?
+
+![bg right:30%](images/06-leonardslee_gardens_man_statue.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Asparukh Akanayev (CC BY 2.0)" -->
@@ -129,7 +145,7 @@ enterprise-grade firewalls, dedicated appliances
 and open-source software (Snort, Suricata,
 Zeek/Bro IDS, etc.)
 
-Doesn't require storage of traffic.
+Doesn't require storage of (all) traffic.
 
 ![bg right:30%](images/06-mesh_head.jpg)
 
@@ -183,7 +199,7 @@ Many solutions define a flow as the
 Highly configurable open-source software.  
 
 Only requires a span/mirror/tap port and
-commodity hardware.
+commodity server hardware.
 
 ![bg right:30%](images/06-umbrellas.jpg)
 
@@ -275,6 +291,9 @@ Makes more or less sense depending on your network architecture/security model.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Bixentro (CC BY 2.0)" -->
-Remember that you may need permission to capture/log network traffic.
+Remember that you may need permission
+to capture/log network traffic.
+  
+Questions or thoughts?
 
 ![bg right:30%](images/06-suite_graffiti.jpg)
