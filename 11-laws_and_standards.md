@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Laws and standards"
@@ -121,6 +121,7 @@ Longer retention may be illegal.
 ![bg right:30%](images/11-log_book.jpg)
 
 <!--
+https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2022482-om-elektronisk-kommunikation_sfs-2022-482/
 -->
 
 ---
@@ -154,6 +155,8 @@ accurate time is mandatory.
 For details, check out
 A.12.4: "_Logging and monitoring_".
 
+(If you can buy/borrow the standard!)
+
 ![bg right:30%](images/11-skeleton.jpg)
 
 <!--
@@ -177,6 +180,19 @@ Ensure that signed and understood
 usage polices are in place to _CYA_.
 
 ![bg right:30%](images/11-glitch_face.jpg)
+
+<!--
+-->
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Loco Steve (CC BY-SA 2.0)" -->
+## Wrapping up
+Dig deeper into the subject
+in future courses.
+
+Questions or thoughts?
+
+![bg right:30%](images/11-battersea_power_station.jpg)
 
 <!--
 -->

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Regular expressions"
@@ -41,7 +41,11 @@ mentally parsing this event is easy:
 13:38 - "Sanna" logged in from 192.0.121.203
 ```
 
-How can we make computers do the same?
+Mayhaps you wanna extract fields,
+normalize log formats or filter events?
+
+How can we make computers do the same
+without lots of sh, grep, cut and tr?
 
 ![bg right:30%](images/14-crash_dummy.jpg)
 
@@ -59,7 +63,7 @@ we'll shall focus on the widely used
 **P**erl **C**ompatible **R**egular **E**xpressions.
 
 Used by almost all logging software
-for advanced field extraction.
+for advanced field extraction/validation.
 
 ![bg right:30%](images/14-old_computers.jpg)
 
@@ -143,7 +147,7 @@ Matches any character one or more times.
 ![bg right:30%](images/14-teardown.jpg)
 
 ---
-## Capture groups
+## Named capture groups
 ```
 $ cat auth.log | pcregrep --only-matching=2 \
   '(?<time>.+) - (?<user>.+) login (?<result>.+) using (?<method>.+)'
@@ -155,6 +159,8 @@ Admin
 Admin
 ```
 
+(Typically turned into log field names, like "time" and "method")
+
 ---
 ## Repetition ranges and negation
 ```
@@ -164,7 +170,7 @@ $ cat auth.log
 9:52 janne logged in
 11:52 monitor logged in
 
-$ cat auth.log | pcregrep --only-matching=1 \
+$ cat auth.log | pcregrep --only-matching=2 \
   '^(?<time>\d{1,2}:\d{1,2}) (?<user>(?!backup|monitor).+) logged in$'
 
 janne
@@ -185,7 +191,7 @@ flavors of regular expression.
 ---
 ## Any alternatives?
 Nothing that has taken off, but the
-[**S**imple **R**egex **L**anguage](https://simple-regex.com/) is a kool attempt:
+[**S**imple **R**egex **L**anguage](https://github.com/SimpleRegex) is a kool attempt:
 
 ```
 /^(?:[0-9]|[a-z]|[\._%\+-])+(?:@)(?:[0-9]|[a-z]|[\.-])+(?:\.)[a-z]{2,}$/i
@@ -204,11 +210,15 @@ must end, case insensitive
 <!-- _footer: "%ATTRIBUTION_PREFIX% Amy Nelson (CC BY 3.0)" -->
 Regardless of its imperfections,
 mastering regex is a very
-worthwhile investment.  
-
+worthwhile investment.
+  
+Scary at first, but a fundamental
+skill for developers and
+log/data analysts.
+  
 A good resource is [Deeecode's
 "Simplified Regular Expressions" course](https://simpleregex.dev/)
-
+  
 Just remember to also include
 negative test cases.
 

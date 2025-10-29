@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Formats and protocols"
@@ -33,18 +33,30 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pelle Sten (CC BY 2.0)" -->
-Enable analysis by humans and machines alike.  
+An ideal log format should enable
+analysis by humans and machines alike.  
   
-Collect logs for centralized analysis/storage.  
+We also want to collect/transfer logs
+for centralized analysis/storage.  
+
+...all while being mindful of security risks,
+performance impact and storage costs.
   
 How do we achieve this?
 
 ![bg right:30%](images/16-abandoned_factory.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Joel Rangsmo (CC BY-SA 4.0)" -->
+Let's begin by discussing
+pros/cons of log formats!
+
+![bg right:30%](images/16-orange_lens_on_rock.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas Day (CC BY 2.0)" -->
 ## Keeping it simple
-Log events delimited by new line:
+Log events delimited by a new line:
 
 ```
 13:36 - "Johan" logged in from 192.0.121.195
@@ -52,7 +64,14 @@ Log events delimited by new line:
 16:20 - Invalid key from 127.0.0.1 for "Bob"
 ```
 
+(Important to remove/escape new line characters
+in your log messages - I'm looking at you, Java!)
+
 ![bg right:30%](images/16-color_glitch.jpg)
+
+<!--
+https://user-images.githubusercontent.com/20878432/43869313-29afa944-9b72-11e8-83fa-f8e8859875fc.png
+-->
 
 ---
 We can try to parse it using some regular expressions:
@@ -65,10 +84,16 @@ We can try to parse it using some regular expressions:
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas Day (CC BY 2.0)" -->
 ## Ain't all that trivial
 Most log files contain multiple
-different event types.  
+different event types - in this
+case, perhaps runtime errors?  
+
+We could write a bunch more
+complex regular expressions,
+but it soon gets out of hand.
 
 We're assuming that the format
-is stable/won't change.
+is stable/won't change - should
+developers really guarantee this?
 
 ![bg right:30%](images/16-color_glitch.jpg)
 
@@ -85,7 +110,7 @@ time=16:20 type=login user=Bob ip=127.0.0.1 success=no
 Clear and easily parsable fields.  
 
 Requires many bytes just to describe
-the log structure (wasteful).
+the log structure (don't make Greta cry).
 
 Need to handle escaping/quoting of
 special characters like spaces.  
@@ -95,7 +120,8 @@ special characters like spaces.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Quinn Dombrowski (CC BY-SA 2.0)" -->
 ## CSV
-**C**omma **S**eparated **V**alues.  
+Let's try **C**omma **S**eparated **V**alues
+with a "header" line instead!  
 
 ```
 LoginTime,User,DurationSeconds,Commands
@@ -119,13 +145,13 @@ delimiter character.
 used as field delimiter)
 
 Does this field contain a
-string, number or list?
+string, number, boolean or list?
 
 ![bg right:30%](images/16-pillars.jpg)
 
 ---
 ## JSON
-**J**ava**S**cript **O**bject **N**otation.
+**J**ava**S**cript **O**bject **N**otation got you covered-ish!
 
 ```json
 [
@@ -133,7 +159,7 @@ string, number or list?
     "LoginTime": "09:42",
     "User": "Joe",
     "DurationSeconds": 139,
-    "Commands": ["apk-update", "apk-upgrade", "ps"]
+    "Commands": ["apk-update", "apk-upgrade", "ps -faux"]
   },
   {
     "LoginTime": "12:52",
@@ -147,8 +173,8 @@ string, number or list?
 
 ---
 ## NDJSON
-**N**ewline **D**elimited
-**J**ava**S**cript **O**bject **N**otation.
+**N**ewline **D**elimited **J**ava**S**cript **O**bject **N**otation.
+is probably a better fit for log events.
 
 ```json
 {"LoginTime": "09:42", "User": "Joe", "DurationSeconds": 139, [...]}
@@ -170,6 +196,9 @@ $ cat logins_log.ndjson | jq -r '.
 Tim
 ```
 
+(Consider adding "jq" to your
+list of "things to learn"!)
+
 ![bg right:30%](images/16-turtle.jpg)
 
 ---
@@ -179,7 +208,7 @@ Tim
 string, number or list?~~  
   
 Requires many bytes just to describe
-the log structure (wasteful).  
+the log structure (you made her cry).  
 
 Besides data type, JSON doesn't
 tell us what the field contains.  
@@ -200,6 +229,8 @@ CSV and key-values.
 ![bg right:30%](images/16-satellite_photo.jpg)
 
 <!--
+https://go2docs.graylog.org/current/getting_in_log_data/gelf.html#GELFPayloadSpecification
+https://www.elastic.co/docs/reference/ecs
 https://www.elastic.co/docs/current/en/integrations/cef
 https://www.microfocus.com/documentation/arcsight/arcsight-smartconnectors-8.3/cef-implementation-standard/Content/CEF/Chapter%201%20What%20is%20CEF.htm
 -->

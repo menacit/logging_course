@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -34,7 +34,7 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Yellowcloud (CC BY 2.0)" -->
 ## Centralized logging requirements
-- Ingestion amount
+- Ingestion amount (volume/EPS)
 - Availability requirements
 - Use-cases and intended end-users
 - Hosting and sovereignty
@@ -72,9 +72,15 @@ Optimizing cost/performance using
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
-Scaling our logging capabilities using
-**selective forwarding** or
-**federated/cross-cluster querying**.
+**Selective forwarding** or
+**federated/cross-cluster querying**
+enables us to analyze logs from
+multiple independent solutions.
+
+Helps us decentralize management,
+scale better and embrace autonomy. 
+
+(not without some issues/caveats!)
 
 ![bg right:30%](images/13-terrarium.jpg)
 
@@ -94,6 +100,9 @@ Some example approaches are...
 - **C**onfidentiality: Hardening, pseudonymization
 - **I**ntegrity: Forwarding, append-only storage
 - **A**vailability: Replication, offline backups
+
+Heavily dependent on properly
+categorizing log sources. 
 
 ![bg right:30%](images/13-lock_pin.jpg)
 
