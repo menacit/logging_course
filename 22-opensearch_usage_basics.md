@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch usage basics"
@@ -38,6 +38,9 @@ chances are that you wanna make some searches.
 
 We'll look at some common use-cases and how
 its searching super-powers can help us. 
+
+(We'll start with general usage before
+getting into logging-specific considerations)
 
 ![bg right:30%](images/22-pixel_map.jpg)
 
@@ -623,6 +626,8 @@ Depending on your preferences, you can use
 Under the hood, these get translate to
 LQL with varying degrees of success.
 
+([Sigma](https://sigmahq.io/) is also an option!)
+
 ![bg right:30%](images/22-phone_booth.jpg)
 
 ---
@@ -633,3 +638,19 @@ Let's do some searches and visualizations
 in OpenStack Dashboards!
 
 ![bg right:30%](images/22-hole_in_wall.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Guilhem Vellut (CC BY 2.0)" -->
+## Wrapping up
+Don't be scared, you'll have plenty
+of time to get friendly with OpenSearch.
+
+In your day-to-day digging, DQL is
+likely the best choice. For advanced
+queries and aggregations, learning
+LQL is a worthwhile investment.
+
+Having a hard time finding documentation
+and guides? Try Googling for Elasticsearch.
+
+![bg right:30%](images/22-le_foron.jpg)

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch introduction"
@@ -91,7 +91,16 @@ to provide an open-source fork.
 Developed by the community, supported
 by the [OpenSearch Software Foundation](https://foundation.opensearch.org/).
 
+(Elastic open sourced it again in 2024)
+
 ![bg right:30%](images/21-desert_hut.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Rick Massey (CC BY 2.0)" -->
+What does our implementation
+of the stack look like?
+
+![bg right:30%](images/21-finch_foundry_wheels.jpg)
 
 ---
 ![bg center:100%](images/21-stack_overview.jpg)
@@ -394,10 +403,9 @@ A single pipeline can have one or more
 outputs configured, such as:
 
 - File
-- Syslog
 - Elasticsearch / OpenSearch
-- Logstash
-- IRC
+- Syslog / GELF / Logstash
+- Email / IRC / Slack
 
 Conditional statements can be used to
 control which output is used based on

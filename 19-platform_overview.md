@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Platform overview"
@@ -37,7 +37,7 @@ Many products and services are available
 for centralized logging.  
   
 Let's take a look at some of them
-and their pros/cons.
+and their pros/cons/trivia.
 
 ![bg right:30%](images/19-log_truck.jpg)
 
@@ -70,7 +70,7 @@ also priced accordingly.
 
 Provided as on-prem or SaaS.  
   
-Recently acquired by Cisco.
+Acquired by Cisco in 2023.
 
 ![bg right:30%](images/19-pcb_macro.jpg)
 
@@ -111,6 +111,23 @@ Closed-sourced in 2021.
 ![bg right:30%](images/19-red_eft.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Joel Rangsmo (CC BY-SA 4.0)" -->
+## Wazuh
+Builds upon ~~the ELK stack~~ OpenSearch and
+a fork of the HIDS "OSSEC" to provide
+an open source solution for...
+
+\*drum roll\*
+
+e**X**tended **D**etection and **R**esponse.
+
+Freely available, but developed
+by a company that sells SaaS,
+consulting and support.
+
+![bg right:30%](images/19-painted_brick_wall_with_chimney.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Maja Dumat (CC BY 2.0)" -->
 ## Loki
 FOSS logging solution built
@@ -123,7 +140,7 @@ Easier and cheaper to operate.
 
 Less flexible, but good enough
 for most operational logging
-use-cases.
+use-cases. A SIEM? Not yet.
 
 Also available as SaaS.
 

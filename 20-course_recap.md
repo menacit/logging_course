@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -51,7 +51,7 @@ like [RegexOne](https://www.regexone.com/)!
 We want structured data to enable
 better querying/filtering.  
 
-Key-values, CSV, JSON and XML
+Key-values, CSV, (ND)JSON and XML
 are commonly used formats.  
 
 Usage of binary storage/transfer of
@@ -98,3 +98,9 @@ Tweaked through audit policies and
 can be extended using tools like Sysmon.
 
 ![bg right:30%](images/27-abstract_building.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Maximilien Brice / CERN (CC BY-SA 3.0)" -->
+Thoughts and/or questions?
+
+![bg right:30%](images/20-cern_lhc_tunnel.jpg)
