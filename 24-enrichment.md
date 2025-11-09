@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Enrichment"
@@ -76,7 +76,11 @@ ingestion or at search-time.
 Like with field parsing, both have
 their pros/cons.  
 
-Current relevance VS Historic accuracy.  
+Current relevance _VS_ Historic accuracy.  
+
+"This IP address is used by evildoers now"
+_VS_
+"This IP address was used by evildoers then".
 
 ![bg right:30%](images/24-brick_hole.jpg)
 
@@ -85,15 +89,16 @@ Current relevance VS Historic accuracy.
 ## Useful filter plugins
 - GeoIP and user agent
 - DNS (forward/reverse lookups)
-- Translate
-- J**DB**C and Memcached
-- HTTP client
+- ["Translate"](www.elastic.co/docs/reference/logstash/plugins/plugins-filters-translate)
+- [J**DB**C](https://www.elastic.co/docs/reference/logstash/plugins/plugins-filters-translate) and Memcached
+- HTTP client (for APIs)
 
 ...and as always, "ruby"!
 
 ![bg right:30%](images/24-polar_bear.jpg)
 
 ---
+## Why may DNS be interesting?
 ```
 # Forward lookup
 $ host suspicious.example.com
@@ -117,9 +122,9 @@ Erghh - less talk, more examples!
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Theo Crazzolara (CC BY 2.0)" -->
-### /var/ioc/evil\_ip.csv
+### /var/ioc/evil\_ip.csv ("key-value")
 ```csv
-157.245.96.121,Observed in logs during 2022 Xmplify incident
+157.245.96.121,Observed in logs during 2025 Xmplify incident
 185.120.19.98,Associated with Explum spear phishing campaign
 194.61.40.74,Have been trying to brutforce our VPN for years!
 ```
@@ -170,7 +175,7 @@ if [source][ip] {
 
 "hits" : [
   {
-    "_index" : "logs-web_servers-2023.11.20",
+    "_index" : "logs-web_servers-2025.10.19",
     "_id" : "6C0B74sB7PKVx7m-L2xx",
     "_score" : 1.0048822,
     "_source" : {
@@ -349,7 +354,7 @@ $ curl \
     "max_score" : 2.0053382,
     "hits" : [
       {
-        "_index" : "logs-web_servers-2023.11.20",
+        "_index" : "logs-web_servers-2025.10.27",
         "_id" : "53JE6osBQrucVyA5EqK1",
         "_score" : 2.0053382,
         "_source" : {
@@ -371,17 +376,21 @@ $ curl \
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
-Search pipelines and Painless scripts
-may be able to help, but a bit out
-of scope for this course.
+"Search pipelines" and [Painless scripts](https://docs.opensearch.org/latest/search-plugins/searching-data/retrieve-specific-fields/#using-scripted-fields)
+may be able to help, but a bit out of
+scope for this course.
 
 ![bg right:30%](images/24-retro_computer.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Wendelin Jacober (CC0 1.0)" -->
-Elastic have since the fork added a feature
-to the proprietary Elasticsearch called
-"runtime" fields.  
+Elastic have since the fork added a
+feature to Elasticsearch called
+"runtime fields".  
+
+Returns selected fields from another
+document in query results, not just
+checking if they contain values.
 
 Acts a bit like JOIN statements does in
 traditional SQL databases.  
@@ -427,10 +436,6 @@ is working on a similar solution.
 input {
   opensearch {
     hosts => ["https://opensearch:9200"]
-    user => "logger"
-    password => "G0d="
-    ssl => true
-    ssl_certificate_verification => false
 
     schedule => "00 03 * * *"
     index => "logs-*"
@@ -440,6 +445,9 @@ input {
 
 [...]
 ```
+
+(Refresh stored enrichment information
+on a schedule - best of both worlds?)
 
 ![bg right:30%](images/24-forest_road.jpg)
 

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Linux auditing"
@@ -40,6 +40,10 @@ them in text-files or syslog.
 **P**luggable **A**uthentication **M**odules
 provides logging of (most) login attempts.
 
+What about when sensitive configuration
+files are modified or suspicious
+processes are executed? 
+
 Let's look at some more options for
 inspection-based auditing on Linux.
 
@@ -74,17 +78,24 @@ of file hashes and scheduled checking.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
-## inotify
-Feature in the Linux kernel to monitor file access.
+## inotify / fanotify
+Features in the Linux kernel
+to monitor file access.
 
-Watchers can be registered to notify a user-space application about any CRUD operation.  
+Watchers can be registered to notify
+a user-space application about
+any CRUD operation.  
 
-Provides ability to monitor reads and get instant notice without expensive scheduled hashing.
+Provides ability to monitor reads and
+get instant notice without expensive
+scheduled hashing.
+
+Similar to "object access" auditing
+on Windows.
 
 ![bg right:30%](images/26-broken_hdd.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
 ```
 $ sudo inotifywatch \
   --event access --event modify --event delete \
@@ -97,8 +108,6 @@ total  access  modify  filename
 7      5       1       /etc/super_sensitive.conf
 ```
 
-![bg right:30%](images/26-broken_hdd.jpg)
-
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kārlis Dambrāns (CC BY 2.0)" -->
 ## SELinux and AppArmor
@@ -108,7 +117,8 @@ Extends the basic access control system
 consisting of file permissions.  
 
 Policies define what a user or program
-can do on the system.  
+can do on the system, like opening
+spawning new processes. 
   
 Both are examples of
 **L**inux **S**ecurity **M**odules.  
@@ -230,6 +240,8 @@ auid=901 uid=0 gid=0 ses=1AUID="persbrandt" UID="root" GID="root"
 [auditbeat](https://www.elastic.co/beats/auditbeat) and [osquery](https://www.osquery.io/)
 are other audit framework consumers.
 
+(We'll get back to auditbeat later!)
+
 ![bg right:30%](images/26-bird.jpg)
 
 ---
@@ -239,8 +251,8 @@ kprobes can be used to dynamically instrument
 most kernel functions/routines.  
 
 eBPF enables developers to create small programs
-that can be executed in kernel-space when hooked
-events occur and do (almost) anything!
+that can be executed in "kernel-space" when
+hooked events occur and do anything\*!
 
 Starting to replace audit framework, LSM and
 similar features due to its flexibility.
@@ -250,21 +262,17 @@ similar features due to its flexibility.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Martin Fisch (CC BY 2.0)" -->
 ## Notable users
-- Falco
-- Cilium
-- eCapture
-- Sysmon for Linux
+- [Falco](https://falco.org/docs/)
+- [Cilium](https://cilium.io/use-cases/protocol-visibility/)
+- [eCapture](https://github.com/gojue/ecapture)
+- [Sysmon for Linux](https://github.com/Sysinternals/SysmonForLinux)
 
 ![bg right:30%](images/26-bees.jpg)
 
 <!--
-https://falco.org/docs/
 https://sysdig.com/blog/getting-started-writing-falco-rules/
 https://falcosecurity.github.io/rules/
 https://cilium.io/
-https://cilium.io/use-cases/protocol-visibility/
-https://github.com/gojue/ecapture
-https://github.com/Sysinternals/SysmonForLinux
 -->
 
 ---

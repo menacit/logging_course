@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Reporting and alerting"
@@ -41,6 +41,8 @@ Alerting and scheduled reporting
 are two common methods that make
 computers do the heavy lifting.
 
+What are some relevant considerations?
+
 ![bg right:30%](images/25-owl.jpg)
 
 ---
@@ -52,7 +54,13 @@ scheduled searches, which are called
 Triggered if search returns results
 or if result is above/below threshold.
 
-Sliding time-span rather than "real-time".
+"Alert me if a log contains evil IPs"
+_VS_
+"Alert me if the number of failed logins
+for a user are >5 during 10 minutes".
+
+Sliding time-span rather than "real-time",
+required for aggregations.
 
 ![bg right:30%](images/25-rock.jpg)
 
@@ -71,6 +79,8 @@ It's a serious problem.
 Sucks the fun out of life and
 may result in real problems
 being ignored/missed.  
+
+Just ask [Target](https://en.wikipedia.org/wiki/Target_Corporation).
 
 Significant time
 should be dedicated to
@@ -95,12 +105,11 @@ Probably not but let's do it anyway.
 Minimize interruptions and
 context-switching.  
   
-Can it wait?
-Can I do something it now?  
+Can it wait? Can / Must I do something now?  
+Some [predictive extrapolation](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/3_extrapolation.png) may help.
   
-Think about alert priorities,
-target groups, alert methods
-and scheduling.  
+Think about alert priorities, target groups,
+alert methods and scheduling.  
 
 Focus on end-to-end tests and
 high-signal alerts to minimize
@@ -119,6 +128,9 @@ triggered and what it could mean.
 
 Link to documentation, run-book
 and other relevant guidance.
+
+Even better: consider some
+automated remediation.
 
 ![bg right:30%](images/25-sloth.jpg)
 
@@ -143,9 +155,83 @@ things without noisy alerts.
 ![bg right:30%](images/25-abandoned_wall.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Nirvana Studios (CC BY 4.0)" -->
+Let's look at some example alerts
+and meditate upon them!
+
+![bg right:30%](images/25-scrapy_diver.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Bruno Sanchez-Andrade Nuño (CC BY 2.0)" -->
+**Time:** Sunday 02:42
+**Recipient:** IT department
+**Notification method:** Email
+**Count last 7 days:** 1337
+**Message content:**
+
+Storage utilization on host "sat-06" is 84%.
+
+![bg right:30%](images/25-iridium_satellite_phone.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Bruno Sanchez-Andrade Nuño (CC BY 2.0)" -->
+**Time:** Sunday 02:42
+**Recipient:** Satellite operations
+**Notification method:** Ticket
+**Count last 7 days:** 1
+**Message content:**
+
+Storage utilization on host "sat-06" is 84%.
+
+![bg right:30%](images/25-iridium_satellite_phone.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Bruno Sanchez-Andrade Nuño (CC BY 2.0)" -->
+Severity: Warning!
+
+Storage utilization on host "sat-06" is 84%.
+
+If max capacity is reached, the system may
+become unstable and unable to operate. 
+
+Automated remediation was not able to
+reclaim sufficient disk space.
+
+Based on predictive extrapolation, the max
+capacity will be reached on Tuesday 12:12
+at the current rate.
+
+For more information about this alert and
+troubleshooting guidance, see https://....
+
+![bg right:30%](images/25-iridium_satellite_phone.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Bruno Sanchez-Andrade Nuño (CC BY 2.0)" -->
+Any other suggestions?
+
+![bg right:30%](images/25-iridium_satellite_phone.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kuhnmi (CC BY 2.0)" -->
 Let's have a look at how alerts
 and reporting can be configured
 in OpenSearch Dashboards!
 
 ![bg right:30%](images/25-penguins.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Adam Lusch (CC BY-SA 2.0)" -->
+## Wrapping up
+Taming alerts and notifications
+is a continuously ongoing battle,
+not a one-off effort.
+
+Just giving it some thought
+will take you quite far!
+
+If you have multiple tools producing
+alerts, have a look at tools like
+[PagerDuty](https://comparecamp.com/media/uploads/2019/02/PagerDuty-dashboard.png) and [Grafana OnCall](https://grafana.com/oss/oncall/).
+
+![bg right:30%](images/25-lake_street_bridge.jpg)
