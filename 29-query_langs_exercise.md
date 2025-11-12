@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -33,11 +33,12 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fritzchens Fritz (CC0 1.0)" -->
 Open ["Query Workbench"](https://opensearch.org/docs/latest/dashboards/query-workbench/) page in
-your instance of OpenSearch Dashboards.  
+your instance of OpenSearch Dashboards
+or use the ["SQL and PPL"](https://docs.opensearch.org/latest/search-plugins/sql/cli/) CLI tool.  
 
 Develop queries using **both** SQL and PPL
-to find/filter information about:
-- Web server requests from Chrome web browsers
+to find/filter relevant log events:
+- Web server requests from Chrome browsers
 - Country and IP address for each failed Windows attempt login
 - Top 10 usernames observed during failed Windows login attempts
 

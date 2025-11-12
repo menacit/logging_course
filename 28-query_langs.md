@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Alternative query languages"
@@ -83,6 +83,30 @@ Supports easy runtime field creation.
 ![bg right:30%](images/28-rusty_silos.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Pelle Sten (CC BY 2.0)" -->
+```
+# Query all documents in index
+# pattern, filter results and
+# choose specific output fields
+search source=logs-auth-* 
+| where status='failed'
+| fields user, source_ip
+
+# Perform search-time field
+# parsing and filter results
+search source=logs-auth-* 
+| parse user '.+@(?<domain>.+)'
+| where domain='example.com'
+| fields user, source_ip
+```
+
+![bg right:30%](images/28-rusty_silos.jpg)
+
+<!--
+https://docs.opensearch.org/latest/search-plugins/sql/ppl/index/
+-->
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jennifer Morrow (CC BY 2.0)" -->
 ## SQL
 **S**tructured **Q**uery **L**anguage.  
@@ -94,10 +118,38 @@ making it a great option.
 ![bg right:30%](images/28-mirror_spheres.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Jennifer Morrow (CC BY 2.0)" -->
+```sql
+-- Treat index pattern as
+-- table name, document as
+-- row and field as
+-- column name
+SELECT user, source_ip
+FROM logs-auth-*
+WHERE status = 'failed';
+
+-- Basic aggregation for
+-- failed logins per IP
+SELECT COUNT(user), source_ip
+FROM logs-auth-*
+WHERE status = 'failed'
+GROUP BY source_ip;
+```
+
+![bg right:30%](images/28-mirror_spheres.jpg)
+
+<!--
+https://docs.opensearch.org/latest/search-plugins/sql/sql/index/
+-->
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
 If you wanna learn more, checkout the
 OpenSearch documentation for
-[DQL](https://opensearch.org/docs/latest/dashboards/dql/) and
-[SQL/PPL](https://opensearch.org/docs/latest/search-plugins/sql/index/)
+[DQL](https://opensearch.org/docs/latest/dashboards/dql/) and [SQL/PPL](https://opensearch.org/docs/latest/search-plugins/sql/index/)
+
+Feel like giving 'em a try?
+Have a look at the [query workbench](https://docs.opensearch.org/latest/dashboards/query-workbench/)
+and ["SQL and PPL"](https://docs.opensearch.org/latest/search-plugins/sql/cli/) CLI tool.
 
 ![bg right:30%](images/28-red_moon.jpg)

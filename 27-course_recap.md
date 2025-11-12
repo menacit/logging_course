@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -226,6 +226,9 @@ verbose problem descriptions
 and significant efforts to
 minimize false-positives. 
 
+Great alerts provide context and
+actionable information.
+
 Scheduled reports can be used to
 minimize "interrupt-driven" work,
 improve planning/prognostication
@@ -236,13 +239,15 @@ using standardized formats.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Graham Drew (CC BY 2.0)" -->
-## Alerting in OpenSearch
 Scheduled searches used for alerts
 are called "monitors" in OpenSearch.  
   
 "Triggers" can be used to configure
 different severity levels/thresholds
 (number of results/value of result).  
+
+"Channels" are used to send alerts
+using email, Slack/Teams, etc.
 
 "Composite monitor" check the status
 of other two or more other monitor,
