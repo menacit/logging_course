@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Best and worst practices"
@@ -33,9 +33,11 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Greg Lloy (CC BY 2.0)" -->
-There's lots more to learn about successfully implementing logging.  
+There's lots more to learn about successfully
+implementing logging solutions.  
 
-The following _(opinionated)_ slides cover some of these lessons. 
+The following _(opinionated)_ slides cover some
+of the lessons I've _(painfully)_ learned.
 
 ![bg right:30%](images/36-old_computer.jpg)
 
@@ -45,7 +47,7 @@ The following _(opinionated)_ slides cover some of these lessons.
 No one _(but the NSA)_ can afford
 to store logs forever.  
 
-Before ingesting a new log source,
+**Before** ingesting a new log source,
 make sure to check and communicate
 retention requirements/policy.  
 
@@ -233,7 +235,7 @@ https://sigmahq.io/
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Stéphane Gallay (CC BY 2.0)" -->
 While just scratching the surface,
-I hope these topics gave you
-some insights!
+I hope these lessons gave you
+some useful insights!
 
 ![bg right:30%](images/36-dice.jpg)
