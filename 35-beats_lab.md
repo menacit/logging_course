@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Elastic Beats lab"
@@ -40,8 +40,5 @@ OpenSearch monitors for alerting.
   
 For detailed instructions, see:  
 ["resources/labs/beats/README.md"](%RESOURCES_ARCHIVE%).  
-  
-**Remember to download the latest version
-of the resources archive! ("log.zip")**
 
 ![bg right:30%](images/35-planetarium_projector.jpg)

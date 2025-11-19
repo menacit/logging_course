@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -42,7 +42,8 @@ FIM software can be combined with
 and ability to detect reads.  
 
 The Linux audit framework enables
-logging syscalls of interest.
+logging syscalls and other kernel
+activity of interest.
 
 Features like "eBPF" are beginning to
 replace current audit functionality,
@@ -80,12 +81,12 @@ may also improve the search and
 analysis experience.  
 
 OpenSearch provides several pre-trained
-freely available for usage.  
+freely available for usage\*.  
   
 The RCF algorithm is commonly used
 for anomaly detection.  
 
-NLP and AI/ML can be used to provide
+NLP and LLMs can be used to provide
 semantic and conversational queries.
  
 ![bg right:30%](images/33-stones_moss.jpg)
@@ -108,8 +109,22 @@ detection of malicious/suspicious behavior.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% William Warby (CC BY 2.0)" -->
 ## Integrity monitoring
-**TBD**
- 
+If we can't trust the integrity of a system,
+we can't put much faith in its logs.
+    
+Using a FIM is a good start, but not enough.
+  
+Solutions like secure boot/measured boot tries
+to prevent/detect manipulation of low-level
+software, such as the UEFI implementation.
+  
+Features like Linux's IMA enables runtime
+detection of untrusted/manipulated software.
+  
+Not bulletproof, but an improvement.
+  
+(Side-quest into disk cloning/forensics)
+
 ![bg right:30%](images/33-monkey.jpg)
 
 ---

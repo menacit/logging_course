@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - Auditbeat collection/analysis lab
 -->
@@ -28,7 +28,7 @@ and Logstash using Docker Compose.
 In order to complete the lab, the student should install and configure the
 [Auditbeat](https://www.elastic.co/beats/auditbeat) logging agent on the lab system to monitor
 file/process creation. The student should also configure monitoring in OpenSearch to generate
-alerts when the monitored activity occurs.  
+alerts when the monitored activity occurs (setup of a "notification channel" is not required).  
   
 A web browser and SSH client are prerequisites for lab participation.  
   
@@ -50,8 +50,8 @@ In order to install Auditbeat and modify its configuration, establish a SSH conn
 
 ### Meritorious ("VG")
 - Utilize the "auditd" module in Auditbeat to log process creation/execution
-- Setup a monitor in OpenSearch to generate an alert when the "id" binary is executed
-- Setup a monitor in OpenSearch to generate an alert when the "nmap" binary is executed
+- Setup a monitor in OpenSearch to generate an alert when the "id" program file is executed
+- Setup a monitor in OpenSearch to generate an alert when the "nmap" program file is executed
 - Setup a composite monitor in OpenSearch for the "id" and "nmap" monitors
 
 
@@ -104,13 +104,13 @@ An instance of Logstash is running inside a Docker container on the same lab sys
 should be installed on. The Logstash container has an input network listener for Beats configured
 and exposed via Docker port forwarding to the host network.  
 
-This means that the Logstash receiver can be accessed from the lab system via localhost/127.0.0.1
-on port 5044/TCP.
+This means that the Logstash receiver can be accessed from the lab system via localhost (AKA
+127.0.0.1) on port 5044/TCP.
 
 
 ### No alert notification required
 When setting up alerts in OpenSearch to complete the mandatory and/or meritorious tasks,
-there is no requirement to enable external notifications (email, Slack, etc.).
+there is no requirement to enable a notification channel (email, Slack, etc.).
 
 
 ### Validating configuration file

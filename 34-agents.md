@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Agents"
@@ -34,8 +34,8 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Miguel Discart (CC BY-SA 2.0)" -->
 Some applications/devices support
-logging of standard protocols like
-Syslog, GELF and plain HTTP.  
+logging using standard protocols
+like Syslog, GELF and plain HTTP.  
 
 In many cases, we need to utilize
 end-point software to collect and
@@ -80,10 +80,14 @@ such as file, systemd's journal and
 the Windows event log.
 
 Supports wide-range of outputs, including
-Logstash, Fluentd, Data Prepper and
+Fluentd, Logstash Data Prepper and
 directly writing to OpenSearch API.
 
 ![bg right:30%](images/34-bees.jpg)
+
+<!--
+https://fluentbit.io/
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jesse James (CC BY 2.0)" -->
@@ -92,7 +96,7 @@ Family of "data shippers" developed by Elastic
 and community members to replace Logstash
 on end-points/log producers.  
 
-Built using libbeat, sharing common features
+Built using "libbeat", sharing common features
 and configuration file format.  
   
 Available in proprietary and open-source versions.
@@ -132,6 +136,10 @@ Auditbeat "system" module.
 
 ![bg right:30%](images/34-pcb_chip.jpg)
 
+<!--
+https://www.elastic.co/docs/reference/beats/libbeat/community-beats
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kylie Jaxxon (CC BY-SA 2.0)" -->
 ## Filebeat
@@ -143,9 +151,9 @@ Provides built-in parsers for common formats.
 Have integrated functionality from "journalbeat"
 to read logs directly from systemd's journal.
 
-Suffering from dissociative identity disorder,
+(Suffering from dissociative identity disorder,
 supports reading logs from message queues,
-Office365, NetFlow, TCP, etc.
+Office365, NetFlow, TCP, etc.)
 
 ![bg right:30%](images/34-logs_and_book.jpg)
 
@@ -155,9 +163,13 @@ Office365, NetFlow, TCP, etc.
 ```yaml
 ---
 filebeat.inputs:
+  - type: "filestream"
+    id: "my-fancy-app"
+    paths: ["/var/log/myapp/*"]
+
   - type: "journald"
-    enabled: true
     id: "everything"
+    enabled: true
 
 filebeat.modules:
   - module: "nginx"
@@ -189,9 +201,13 @@ output.logstash:
 ```yaml
 ---
 filebeat.inputs:
+  - type: "filestream"
+    id: "my-fancy-app"
+    paths: ["/var/log/myapp/*"]
+
   - type: "journald"
-    enabled: true
     id: "everything"
+    enabled: true
 
 [...]
 ```
@@ -256,13 +272,12 @@ applications don't utilize the event log.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Dennis van Zuijlekom (CC BY-SA 2.0)" -->
-### C:\ProgramData\Elastic\Beats\winlogbeat\winlogbeat.yml
+### C:\ProgramData\Elastic\Beats<br>\winlogbeat\winlogbeat.yml
 ```yaml
 ---
 winlogbeat.event_logs:
   - name: "Security"
   - name: "Microsoft-Windows-Sysmon/Operational"
-  - name: "Microsoft-IIS-Logging/Logs"
   - name: "Windows PowerShell"
     event_id: 400, 403, 600, 800
 
@@ -315,8 +330,7 @@ packetbeat.protocols:
     enabled: true
 
   - type: "dns"
-    ports:
-      - 53
+    ports: [53]
 
 output.logstash:
   enabled: true
@@ -368,6 +382,9 @@ built-in remote configuration management.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Randy Adams (CC BY-SA 2.0)" -->
-## 'Nuff talk, go ahead and try them!
+## Wrapping up
+You'll soon get a chance to try them!
+
+Questions and/or half-baked thoughts?
 
 ![bg right:30%](images/34-mannequin.jpg)
