@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Introduction"
@@ -81,7 +81,7 @@ Essential part to comply with most IT related laws/compliance schemes.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
-Dip our toes into benefits in other areas, such as cost savings and increased availability. 
+Dip our toes into benefits in other areas, such as cost savings and improved availability. 
 
 ![bg right:30%](images/00-astronaut_streetart.jpg)
 

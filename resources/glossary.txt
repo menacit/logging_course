@@ -1,0 +1,157 @@
+<!--
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
+SPDX-License-Identifier: CC0-1.0
+X-Context: Logging course
+-->
+
+# Glossary of acronyms: Logging course
+**Format:** Acronym | Meaning | Notes
+**Example usage:** `grep -i '^ntp' glossary.txt`
+
+A/B | Comparing variant A against variant B | Logs of user behaviour show what effect a change had, which makes them useful outside security too
+AI | Artificial Intelligence | Used in log platforms to find anomalies, group similar events and help analysts write queries or summarise incidents
+APFS | Apple File System | Mentioned with other file systems. Built-in features like checksums and snapshots can help keep stored logs intact
+API | Application Programming Interface | Log platforms take in and return data over APIs (e.g. OpenSearch REST API). API calls are also an important log source themselves, e.g. cloud audit trails
+AUID | Audit User ID | The Linux audit framework keeps the original login user even after `sudo`/`su`. This is key when tracing who actually ran a command as root
+AVC | Access Vector Cache | SELinux logs "avc: denied" messages when access is blocked. They are useful for spotting attacks and for debugging policies
+AWS | Amazon Web Services | Cloud provider with its own logging services (e.g. CloudTrail, VPC Flow Logs), which need to be collected centrally
+B2B | Business-to-Business | Partner integrations create logs that may be needed for troubleshooting and settling disputes
+BI | Business Intelligence | "Sell it as BI!": log data has business value (usage, trends), which helps justify what a logging platform costs
+BIPM | Bureau International des Poids et Mesures | International Bureau of Weights and Measures. Maintains UTC, the reference behind consistent log timestamps
+BOTES | Elastic version of the BOTS (Boss of the SOC) dataset | Realistic security event dataset (Windows events, Sysmon, etc.) used for hands-on analysis in OpenSearch/Elastic
+BPF | Berkeley Packet Filter | Used to filter captured network traffic, e.g. with tcpdump
+BTRFS | B-tree File System | Copy-on-write file system. Snapshots and checksums can help protect stored logs
+CEF | Common Event Format | Key-value log format from ArcSight, widely supported by security products and SIEMs
+CET | Central European Time | Local time zones in logs cause confusion when correlating events. Normalise to UTC
+CIA | Confidentiality, Integrity, Availability | Logs need all three: they often contain sensitive data, must not be tampered with, and must be available during an investigation
+CIS | Center for Internet Security | CIS Benchmarks give recommended audit and logging settings, e.g. for Windows and Linux
+CISO | Chief Information Security Officer | Often owns logging requirements and uses logging metrics for reporting
+CLI | Command-Line Interface | Tools like grep, cut, sort, jq and journalctl let you analyse logs quickly without a central platform
+CMDB | Configuration Management Database | Used to enrich logs with asset info (owner, criticality, location)
+CPU | Central Processing Unit | Parsing, enrichment and agents use CPU, which affects sizing and agent footprint
+CRUD | Create, Read, Update, Delete | The actions to audit-log on data. Reads ("R") are often left out but matter for privacy and compliance
+CSV | Comma-Separated Values | Common structured log/export format. Easy to parse with coreutils
+CVE | Common Vulnerabilities and Exposures | Vulnerability IDs used to enrich logs and to search past logs for signs of exploitation
+DB | Database | Both a log source (query/audit logs) and a lookup source for enrichment
+DDoS | Distributed Denial of Service | Spotted through traffic and flow logs. Can also flood the logging pipeline itself
+DF | Don't Fragment | IP header flag, seen in packet captures (tcpdump output)
+DNS | Domain Name System | DNS query logs are a valuable security source (C2, tunnelling, phishing domains). Forward/reverse lookups are used for enrichment
+DORA | Digital Operational Resilience Act | EU regulation for the financial sector with requirements on monitoring, incident detection and record-keeping
+DQL | Dashboards Query Language | Simple filter language in OpenSearch Dashboards, used in day-to-day log searching
+DSL | Domain-Specific Language | OpenSearch's JSON-based "Query DSL", which is the most powerful but verbose way to query logs
+DSS | Data Security Standard | See PCI DSS
+eBPF | extended Berkeley Packet Filter | Lets you trace and record kernel and process activity cheaply; starting to replace older audit tooling
+ELK | Elasticsearch, Logstash, Kibana | Classic open source stack for collecting, storing and visualising logs. OpenSearch is a fork of it
+EPS | Events Per Second | Main measure of ingestion volume, used for sizing and often for SIEM licensing
+EU | European Union | Source of regulations that affect logging (GDPR, NIS2, DORA, data retention)
+FIM | File Integrity Monitoring | Detects and logs changes to critical files (configs, binaries), e.g. with Wazuh/OSSEC or auditd
+FOSS | Free and Open Source Software | Most tools in the course (OpenSearch, Logstash, Beats, Wazuh, auditd) are FOSS
+FPGA | Field-Programmable Gate Array | Hardware used in high-precision time servers (e.g. Netnod's NTS-FPGA) that provide trustworthy time for timestamps
+FTP | File Transfer Protocol | Legacy cleartext protocol. Its transfer logs can show data leaving the network
+FW | Firewall | Firewall logs show allowed/denied connections and are a core network log source
+GB | Gigabyte | Unit for log volume and storage when planning capacity and retention
+GDPR | General Data Protection Regulation | Requires logging access to personal data but also limits what logs may contain and how long they are kept (PII in logs)
+GELF | Graylog Extended Log Format | JSON-based structured log format that fixes syslog's limits (e.g. message size, typed fields)
+GID | Group ID | Logged with UID in Linux audit events to identify who acted
+GMT | Greenwich Mean Time | Older time standard. Use UTC in logs instead
+GNSS | Global Navigation Satellite System | Satellite time source for accurate clocks. Can be jammed or spoofed, which affects log timestamps
+GNU | GNU's Not Unix | GNU coreutils (cut, sort, uniq, date, etc.) are used for command-line log analysis
+GPS | Global Positioning System | A common GNSS used as a reference clock for time servers
+GPU | Graphics Processing Unit | Speeds up AI/ML used in log analysis
+GUI | Graphical User Interface | Dashboards and graphical tools like Event Viewer, as opposed to CLI analysis
+HDD | Hard Disk Drive | Cheaper, slower storage tier for older ("warm"/"cold") log data
+HIDS | Host-based Intrusion Detection System | Runs on endpoints and checks logs, files and processes (e.g. OSSEC, Wazuh)
+HQ | Headquarters
+HSM | Hardware Security Module | Protects keys used to sign or seal logs so tampering can be detected
+HTML | HyperText Markup Language | Format for generated reports
+HTTP | HyperText Transfer Protocol | Web server access logs (method, status, User-Agent) are key sources. HTTP is also a common way to ship logs
+HTTPS | HTTP Secure | Encrypted transport for shipping logs. It also hides traffic from network monitoring, which pushes visibility to endpoint logs
+HW | Hardware | Log volume and retention decide hardware needs for the log platform
+I/O | Input/Output | Indexing and searching logs uses a lot of disk I/O
+IaaS | Infrastructure as a Service | Cloud model. Who logs what is split between you and the provider
+ICANN | Internet Corporation for Assigned Names and Numbers | Maintains the time zone database (tzdata) used to convert log timestamps
+ID | Identifier | E.g. event IDs (Windows), request/correlation IDs to link log entries across systems
+IDS | Intrusion Detection System | Produces security alerts as logs (e.g. Suricata, Zeek)
+IETF | Internet Engineering Task Force | Standardises log-related protocols and formats (syslog, IPFIX, RFC 3339 timestamps)
+IFS | Internal Field Separator | Shell variable. Set it to newline to loop over log lines safely
+IIS | Internet Information Services | Microsoft web server. Its pre-structured logs need parsing and normalisation
+IMA | Integrity Measurement Architecture | Linux kernel feature that measures and logs files at runtime. Used with TPM for integrity checks
+IoC | Indicator of Compromise | IPs, domains, hashes, etc. matched against logs to find known threats
+IOS | Internetwork Operating System | Cisco network OS (e.g. IOS XE). Network devices send logs via syslog
+IoT | Internet of Things | Devices often with poor logging. Network logs may be the only visibility
+IP | Internet Protocol | IP addresses are central log fields; enriched with GeoIP, DNS and threat intelligence; may count as personal data
+IPFIX | IP Flow Information Export | IETF standard for flow logs (based on NetFlow): who talked to whom, when and how much
+IPS | Intrusion Prevention System | Like IDS but also blocks. Logs both detections and actions
+IPv6 | Internet Protocol version 6 | IPv6 addresses appear in logs and lookups; their formats must be handled by parsers and enrichment
+IR | Incident Response | One of the main reasons to log. Without logs it is hard to know what happened
+IRC | Internet Relay Chat | Listed as an alert/notification channel
+ISO | International Organization for Standardization | ISO 8601 (timestamp format) and ISO 27001 (security management, including logging requirements)
+IT | Information Technology
+JSON | JavaScript Object Notation | The most common structured log format. Easy to parse, query (jq) and index
+KV | Key-Value | Simple structured log format (`key=value`), e.g. Linux audit logs and CEF
+LEK | Lagen om elektronisk kommunikation | Swedish Electronic Communications Act. Rules on data retention by telecom operators
+LLM | Large Language Model | Can help explain logs, write queries and summarise incidents. Watch out for wrong answers and sending data to third parties
+LMS | Learning Management System | Where course material may be available
+LQL | Lucene Query Language | Query syntax in OpenSearch/Elastic. Together with DQL the most used day-to-day
+LSM | Linux Security Modules | Framework behind SELinux/AppArmor, whose decisions show up in logs
+MB | Megabyte | Unit for log volume and storage when planning capacity and retention
+MITM | Man-in-the-Middle | Attack that NTS protects time sync against. Also a risk for unencrypted log shipping
+ML | Machine Learning | Anomaly detection on logs (e.g. OpenSearch's RCF-based detectors). Needs good baseline data
+MS | Microsoft | Windows has strong built-in logging (Event Log, Sysmon, PowerShell logging)
+NDJSON | Newline-Delimited JSON | One JSON object per line, the typical format for log files and bulk ingestion
+NIDS | Network-based Intrusion Detection System | Watches mirrored traffic (TAP/SPAN) and logs suspicious activity
+NIS | Network and Information Security (Directive) | EU directive requiring monitoring, incident detection and reporting, which in practice needs logging
+NIS2 | Network and Information Security Directive 2 | Successor to NIS with a wider scope and stricter requirements on incident detection and reporting
+NIST | National Institute of Standards and Technology | US agency. Publishes guidance on log management and runs public time servers
+NLP | Natural Language Processing | Used to extract structure or meaning from unstructured log messages
+NOC | Network Operations Center | Uses logs for uptime and troubleshooting. Shares logging infrastructure with the SOC
+NSA | National Security Agency
+NTP | Network Time Protocol | Keeps clocks in sync so timestamps from different systems can be correlated
+NTS | Network Time Security | Adds authentication to NTP to protect against tampered time (MITM)
+OoB | Out of the Box | Features or parsing rules that come built in with a log platform
+OS | Operating System | Main source of system and security logs (Windows Event Log, syslog, journald, auditd)
+OSSEC | Open Source HIDS SECurity | Host-based IDS. Wazuh is a fork. Does log analysis, FIM and rootkit detection
+PCI | Payment Card Industry | Card payment industry; its PCI DSS standard sets logging requirements for systems handling card data
+PCI DSS | Payment Card Industry Data Security Standard | Requires logging of access to cardholder data and regular log review
+PDF | Portable Document Format | Format for generated reports
+PII | Personally Identifiable Information | Often ends up in logs (IPs, usernames, emails). Must be limited, pseudonymised or protected
+PKI | Public Key Infrastructure | Used by NTS and TLS for trust and key exchange
+PPL | Piped Processing Language | OpenSearch query language that chains commands with pipes, for log analysis
+PST | Pacific Standard Time | Example of a local time zone that complicates timestamp handling
+PTP | Precision Time Protocol | More precise clock sync than NTP (sub-microsecond)
+PTS | Post- och telestyrelsen | Swedish Post and Telecom Authority. Funds Netnod's public NTP/NTS service
+Q&A | Questions and Answers
+RAID | Redundant Array of Independent Disks | Protects stored logs against disk failure
+RCF | Random Cut Forest | Anomaly detection algorithm used by OpenSearch to find odd patterns in logs
+RegEx | Regular Expression | Pattern matching to search, filter and parse unstructured logs (grep, grok)
+RFC | Request for Comments | IETF standards documents, e.g. RFC 3339 (timestamps) and RFC 5424 (syslog)
+SaaS | Software as a Service | Hosted log platforms or applications. Limited control over logs and retention
+SDLC | Software Development Life Cycle | Logging should be planned during development, not added afterwards
+SELinux | Security-Enhanced Linux | Mandatory access control. Denials are logged as AVC messages
+SIEM | Security Information and Event Management | Platform that collects, correlates and alerts on security logs
+SOC | Security Operations Center | Team that monitors logs and alerts and responds to incidents
+SQL | Structured Query Language | Familiar query language supported by OpenSearch. Databases are also a log source
+SSD | Solid-State Drive | Fast storage tier for recent ("hot") log data that is searched often
+SSH | Secure Shell | SSH auth logs are a classic source for spotting brute-force and unauthorised access
+SSL | Secure Sockets Layer | Outdated predecessor of TLS
+TAP | Test Access Point | Copies network traffic to capture and IDS systems (e.g. Azure Virtual Network TAP)
+TB | Terabyte | Unit for log volume and storage when planning capacity and retention
+TBD | To Be Determined
+TCP | Transmission Control Protocol | Reliable transport for log shipping (e.g. syslog over TCP). Shows up in traffic logs
+TD | Threat Detection | Finding attacks or misuse, together with IR the main security reason to log
+TLS | Transport Layer Security | Encrypts log shipping between agents, collectors and storage
+TOTP | Time-based One-Time Password | Second factor whose use and failures show up in authentication logs
+TPM | Trusted Platform Module | Hardware root of trust. Used for measured boot, attestation and protecting log integrity
+TZ | Time Zone | Must be clear in every timestamp. Normalise to UTC
+UDP | User Datagram Protocol | Traditional syslog transport. Fast but messages can be lost or spoofed
+UEFI | Unified Extensible Firmware Interface | Firmware measured during boot. Changes can be spotted with TPM-based logging
+UI | User Interface | Interfaces such as OpenSearch Dashboards used to search and visualise logs
+UID | User ID | Identifies the user in Linux logs. Compare with AUID
+US | United States
+UTC | Coordinated Universal Time | Recommended time zone for all log timestamps, so events can be correlated
+UTF | Unicode Transformation Format | Log character encoding (UTF-8). Matters for parsing and regex character ranges
+UX | User Experience | User interaction logs help improve UX
+VPN | Virtual Private Network | VPN logs show remote access: who connected, from where and when
+VS | Versus | E.g. managed vs self-hosted, pull vs push, index-time vs search-time
+XML | Extensible Markup Language | Structured format used by Windows Event Log events
+ZFS | Zettabyte File System | File system with checksums, snapshots and compression, useful for storing logs

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Vocabulary and basics"
@@ -222,8 +222,191 @@ Segue: Now that we know what should be in the audit log entry, how do we present
 -->
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+Doesn't sound so complicated, does it?
+
+Let's check if y'all been awake!
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+We'll see five example log entries.
+
+Each is missing at least one _W_
+that should be there.
+
+Once you've figured it out,
+raise your (virtual) hand!
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+_The user Bob authenticates successfully
+to an administrative interface of
+the company's web shop._
+
+```
+2026-11-02 06:04:02+01:00 -
+Remote login to admin panel
+suceeded from 10.13.37.64
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+```
+2026-11-02 06:04:02+01:00 -
+Remote login to admin panel
+suceeded from 10.13.37.64
+for user account "Bob"
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+_The user Ada adds a firewall rule._
+
+```json
+{
+  "user": "ada",
+  "remote_addr": "10.9.1.9",
+  "subsystem": "netfilter",
+  "action": "RULE_ADD",
+  "action_options": {
+    "from": "192.168.18.0/24",
+    "to": "10.13.37.42/32",
+    "proto": "any",
+    "policy": "allow"
+  },
+  "reason": "See support ticket #319"
+}
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+```json
+{
+  "time": "2026-11-02 06:04:02+01:00",
+  "user": "ada",
+  "remote_addr": "10.9.1.9",
+  "subsystem": "netfilter",
+  "action": "RULE_ADD",
+  "action_options": {
+    "from": "192.168.18.0/24",
+    "to": "10.13.37.42/32",
+    "proto": "any",
+    "policy": "allow"
+  },
+  "reason": "See support ticket #319"
+}
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+_The user Eve fails to remotely 
+log in to the production database._
+
+```
+_time=2026-11-04T15:02:19Z account=eve
+action=db_login successful=false
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+```
+_time=2026-11-04T15:02:19Z account=eve
+action=db_login successful=false
+remote_addr=192.168.7.11
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+_The user Charlie changes the password
+of Bob's system account._
+
+```xml
+<event>
+  <type>audit</type>
+  <actor_user>Charlie</actor>
+  <actor_source>10.17.23.10</actor_source>
+  <reason>Follow up support case nr. 429</reason>
+  <start_time>2026-11-02 06:04:02+01:00</start_time>
+  <end_time>2026-11-02 06:04:05+01:00</end_time>
+</event>
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+```xml
+<event>
+  <type>audit</type>
+  <actor_user>Charlie</actor>
+  <actor_source>10.17.23.10</actor_source>
+  <reason>Follow up support case nr. 429</reason>
+  <start_time>2026-11-02 06:04:02+01:00</start_time>
+  <end_time>2026-11-02 06:04:05+01:00</end_time>
+  <action>Modified password for user "Bob"</action>
+</event>
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+_The user Dan performs a location search
+in a system for license plate scanners._
+
+```
+At 23:45:12 on the 7th of June 2026,
+the user account Dan (logged in from
+the IP address 172.12.59.1) executed a
+search query for the vehicle code
+"ABC123" and reterived 8 identified
+sightings between February and June. 
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Simon Waldherr (CC BY-SA 4.0)" -->
+```
+At 23:45:12 on the 7th of June 2026,
+the user account Dan (logged in from
+the IP address 172.12.59.1) executed a
+search query for the vehicle code
+"ABC123" and reterived 8 identified
+sightings between February and June. 
+Reason provided by user:
+"Search for missing person in the
+ongoing investigation #4219".
+```
+
+![bg right:30%](images/01-cern_lhc_side.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas A. Tonelli (CC BY 2.0)" -->
+And now: back to the show!
+
+![bg right:30%](images/01-forest_log_3.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jonathan Torres (CC BY 4.0)" -->
-Preferably readable by man and machine alike!
+Besides their content, they should
+be readable by man and machine alike!
 
 ![bg right:30%](images/01-cyborg.jpg)
 
@@ -237,6 +420,8 @@ Preferably readable by man and machine alike!
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->
 In practice, both may contain events of interest for security analysts.  
+
+The same (but other way around) is true for operations personnel.
 
 Many systems don't differentiate between them.
 
@@ -481,7 +666,7 @@ Some insights require a wider-perspective than individual systems.
 ## Minimizes risk of tampering
 Log data can be manipulated to hide malicious activity or implicate individuals.  
 
-Once hacked/modified, system logs can no longer be trusted.  
+Once hacked, system logs can no longer be trusted\*.  
 
 Centralized logging enables us to preserve the information.
 
@@ -625,10 +810,10 @@ Logs may contain
 credentials and other sensitive information.  
 
 That may be of interest to malicious actors,
-especially if centrailized.
+especially if centralized.
 
 **Anonymization/Pseduonymization**
-may help, but are not a penicillin.
+may help, but are not a panacea.
 
 ![bg right:30%](images/01-boarded_windows.jpg)
 

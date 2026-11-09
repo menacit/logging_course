@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Basics reflections exercise"
@@ -31,7 +31,7 @@ style: |
 <!-- _footer: "%ATTRIBUTION_PREFIX% Austin Design (CC BY-SA 2.0)" -->
 ## Answer the following questions
 - What are your most important takeaways?
-- Did you have any "Ahaaa!"-moments?
+- What are you excited to learn more about?
 - Was anything unclear or were there specifics you didn't understand?
   
 **[courses+log_010301@%EMAIL_DOMAIN%](mailto:courses+log_010301@%EMAIL_DOMAIN%)**

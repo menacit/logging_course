@@ -34,7 +34,7 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Tero Karppinen (CC BY 2.0)" -->
 ## Exercise: Sell em' logging
-Participants are split into four or more groups.  
+Participants are split into three or more groups.  
   
 Each group will be assigned an example organization that they'll pitch an aspect
 of logging to.  
@@ -66,17 +66,8 @@ Pitch **log analysis for UX improvements and monetary gains**.
 ![bg right:30%](images/02-singapore_gardens.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% Reid Campbell (CC0 1.0)" -->
-## Org. 3: Exemplum Medical
-Company that conducts research and manufacturing of medical devices/medicine.
-
-Pitch **security, audit and operational logging**.
-
-![bg right:30%](images/02-minerals.jpg)
-
----
 <!-- _footer: "%ATTRIBUTION_PREFIX% OLCF at ORNL (CC BY 2.0)" -->
-## Org. 4: Examplx Web Services
+## Org. 3: Examplx Web Services
 Company providing cloud infrastructure and applications as a service.
 
 Pitch **operational logging**.
