@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Time and clocks"
@@ -65,6 +65,10 @@ by OS/applications.
 
 ![bg right:30%](images/05-pdp.jpg)
 
+<!--
+https://en.wikipedia.org/wiki/Year_2038_problem
+-->
+
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Halfrain (CC BY-SA 2.0)" -->
 ## What is a second anyway?
@@ -75,9 +79,9 @@ to properly define a second.
 
 **Atomic clocks** measure the resonant
 frequency of atoms very precisely,
-ain't [expensive\+\+ these days](https://github.com/Time-Appliances-Project/Time-Card).  
+ain't even [expensive\+\+ these days](https://github.com/Time-Appliances-Project/Time-Card).  
 
-Since 1968, **BIPM** defines it as
+Since 1968, [**BIPM**](https://www.bipm.org/en/) defines it as
 \~9 billion frequency transitions of
 Cesium 133 at -273 Celsius.
 
@@ -96,7 +100,8 @@ Let's talk about **time zones** and **dates**...
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Steve Jurvetson (CC BY 2.0)" -->
 ## Time zones
-You wanna eat lunch around 12, right?  
+Eating lunch around 12 seems very
+important to people out there.  
 
 Not straight lines, quite a lot of politics involved.  
 
@@ -140,6 +145,8 @@ Some time zones differ by
 Why not throw in
 **leap years** and **leap seconds**?
 
+They can even be negative! :-S 
+
 ![bg right:30%](images/05-mural_streetart.jpg)
 
 ---
@@ -166,7 +173,8 @@ Could any somewhat sane person wrap their head around this?
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jonathan Torres (CC BY 4.0)" -->
 Let's meet
-**Arthur David Olson** and **Paul Eggert**.
+**Arthur David Olson** and **Paul Eggert**
+who helped us survive this mess.
 
 ![bg right:30%](images/05-dragon_fighter.jpg)
 
@@ -191,13 +199,30 @@ Challenges solved?
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
 ## Time/Date representation
 Many different formats exist for dates and timestamps.  
+
+> 01/02/03 01:02:03 PM
+
+> Thu Nov 12 06:25:41 2026
   
 Which part is the year, month and day?
 What time zone are we talking about?  
+How do we sort that efficiently?
 
-Some are more/less readable
-by humans and machines alike,
-like [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) and [ISO 8601](https://www.rfc-editor.org/rfc/rfc3339).
+![bg right:30%](images/05-number_pad.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
+## Time/Date representation
+Some formats are easier for
+humans and machines to handle.
+
+Like [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339):
+> 2026-11-12 06:29:06+01:00
+
+...or [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601):
+> 2026-11-12T06:29:06+01:00
+> 2026-11-12T05:29:06+00:00
+> 2026-11-12T05:29:06Z
 
 (please use one of these!)
 
@@ -207,6 +232,10 @@ like [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) and [ISO 8601](https://w
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->
 Okay okay -
 Time is messy but important, we get it!
+
+**Repeat after me:**
+I shall only produce logs with a timestamp
+that contains the time zone.
 
 ![bg right:30%](images/05-mauritius.jpg)
 
@@ -312,12 +341,15 @@ Let's focus on the second problem...
 In the basement of **BIPM**,
 atomic clocks tick to define...
 
-**U**niversal
+~~**U**niversal
 **T**ime
-**C**oordinated.
+**C**oordinated~~.
 
-(not a time zone, but \~matches
-GMT except no daylight savings)
+Coordinated Universal Time (UTC).
+
+Not really a time zone, but \~matches
+GMT except no daylight savings
+and (soon) no leap seconds!
 
 ![bg right:30%](images/05-vault_door.jpg)
 
@@ -351,6 +383,8 @@ What's the solution?
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Charles Hoisington, GSFC (CC BY 2.0)" -->
 Use multiple sources and calculate an average!
+
+(While ignoring significant outliers)
 
 ![bg right:30%](images/05-satellite_dish.jpg)
 
@@ -411,6 +445,7 @@ Join the annual
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Wonderlane (CC BY 2.0)" -->
-**Questions and/or thoughts?**
+## Wrapping up
+Questions and/or thoughts?
 
 ![bg right:30%](images/05-mechanical_sample_wall.jpg)

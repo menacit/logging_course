@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Laws and standards"
@@ -69,7 +69,7 @@ Especially tricky/costly considering the wide definition of personal data.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Asparukh Akanayev (CC BY 2.0)" -->
-## NIS(2)
+## NIS2 / "Cybersäkerhetslagen"
 Directive on security of
 **N**etwork and **I**nformation **S**ystems.  
 
@@ -78,6 +78,9 @@ operators of critical infrastructure/services.
   
 Following the baseline and reporting requirements
 without logging is near impossible.  
+
+(Some sector regulators may define
+more specific requirements.)
 
 ![bg right:30%](images/11-power_line.jpg)
 

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Basics recap"
@@ -37,18 +37,20 @@ style: |
 - Debug and optimize systems
 - Understand user behavior and adapt UX
 - Find another venue for revenue
-- Comply with rules and regulation
 - **Detect/Investigate malicious activity**
+- Comply with rules and regulation
 
 ![bg right:30%](images/04-observatory_instruments.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Kurayba (CC BY-SA 2.0)" -->
 ### Operational logs
-Enables us to understand what is
-happening in a system.
+Enables us to understand why a
+system is behaving a certain way.
 
 ### Audit logs
+Helps to build a timeline of activity.
+
 **W**hen, **w**ho, **w**hat, **w**here
 and (possibly) **w**hy?
 
@@ -72,6 +74,18 @@ Centralized logging services often serve as the basis for a...
 ![bg right:30%](images/04-seal.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Martin Fisch (CC BY 2.0)" -->
+If you take a SIEM and add a bit of
+(semi-)automated handling, you got a...
+
+**S**ecurity
+**O**rchestration,
+**A**utomation and
+**R**esponse system.
+
+![bg right:30%](images/04-seal.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jan Hrdina (CC BY-SA 2.0)" -->
 ## Benefits of centralized logging
 - Ease correlation
@@ -89,6 +103,39 @@ Centralized logging services often serve as the basis for a...
 - Legal/Compliance challenges
 
 ![bg right:30%](images/04-plant_car.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
+## Network traffic logging
+Capture all traffic flowing across the network
+using tap/mirror/span functionality in switches.
+  
+Easy to implement **inspection-based** logging.  
+
+Requires lots computing resources and storage,
+encrypted traffic is a challenge.  
+
+**NIDS** are a middle-ground that just looks for
+suspicious traffic using IoCs/rulesets.  
+
+![bg right:30%](images/09-wire_pole.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Pelle Sten (CC BY 2.0)" -->
+## Flow logging
+Only log and store traffic metadata.  
+  
+**Network flow \~=
+same peers, protocol and
+(when applicable) port.**  
+
+Routers and networking gear provides
+HW-based support for **NetFlow/IPFIX**.  
+
+(In many cases extremely) useful for
+both **NOC** and **SOC**.
+
+![bg right:30%](images/09-spheres.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Yves Sorge (CC BY-SA 2.0)" -->

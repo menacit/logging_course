@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Analysis with Coreutils"
@@ -36,7 +36,8 @@ UNIX-like systems have historically produces tons of text files containing log e
 
 Take a peak in "**/var/log**".  
   
-Many different tools exist to tame them.
+Many different tools exist to
+filter, massage and present them.
 
 ![bg right:30%](images/07-abstract_stairs.jpg)
 
@@ -571,11 +572,11 @@ $ cat clock_skewed_log.txt
 
 $ IFS=$'\n'
 $ for LINE in $(cat clock_skewed_log.txt); do
-  $ TIMESTAMP="$(echo "${LINE}" | cut -d = -f 1)"
-  $ MESSAGE="$(echo "${LINE}" | cut -d = -f 2-)"
-  $ FIXED_TIMESTAMP="$(date -u --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%M")"
-  $ echo "${FIXED_TIMESTAMP}=${MESSAGE}"
-$ done
+    TIMESTAMP="$(echo "${LINE}" | cut -d = -f 1)"
+    MESSAGE="$(echo "${LINE}" | cut -d = -f 2-)"
+    FIXED_TIMESTAMP="$(date -u --date "${TIMESTAMP} UTC + 45 minutes" "+%H:%M")"
+    echo "${FIXED_TIMESTAMP}=${MESSAGE}"
+  done
 
 08:59=User "root" logged in
 09:00=User "anna" logged out
@@ -629,6 +630,7 @@ use the **man** and **info** commands.
 
 `grep -F == grep --fixed-strings`
 
-With time, you'll grow your own toolbox for efficiently working with data filtering and analysis.
+Analogies for the Coreutils exist in
+most SIEM/log analysis solutions.
 
 ![bg right:30%](images/07-llama.jpg)
