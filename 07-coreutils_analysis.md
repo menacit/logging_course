@@ -179,7 +179,7 @@ Cloudberry
 ```
 $ grep -l password /etc/my_app/*.conf
 
-/etc/my_app/cache.xml
+/etc/my_app/cache.conf
 /etc/my_app/db.conf
 ```
 

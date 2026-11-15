@@ -52,15 +52,18 @@ For more details, check out
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Marcin Wichary (CC BY 2.0)" -->
 ## GDPR
-**G**eneral **D**ata **P**rotection **R**egulation.  
+Restricts how PII can be stored/processed.  
   
-Restricts how PII and be stored/processed.  
-  
-Requires logging when PII is accessed by employees/third-parties.  
+Requires logging when PII is accessed by
+employees/third-parties.
 
-Especially tricky/costly considering the wide definition of personal data.  
+Especially tricky/costly considering the
+wide definition of personal data.  
 
-(Who watches the watchers?)
+(Who watches the watchers?!)
+
+"Anonymization"/"pseudonymization" helps
+to mitigate this - more about that later!
 
 ![bg right:30%](images/11-retro_computer.jpg)
 
@@ -75,31 +78,16 @@ Directive on security of
 
 Puts security-related requirements on
 operators of critical infrastructure/services.  
-  
-Following the baseline and reporting requirements
-without logging is near impossible.  
 
-(Some sector regulators may define
-more specific requirements.)
+Every kind of incident, not just intrusions.
+
+**Article 21:** Detect, handle and recover.
+**Article 23:** Accurately and quickly report.
+
+For how long? That is up to your risk
+assessment and the sector regulator.
 
 ![bg right:30%](images/11-power_line.jpg)
-
-<!--
--->
-
----
-<!-- _footer: "%ATTRIBUTION_PREFIX% Bill Badzo (CC BY-SA 2.0)" -->
-## DORA
-**D**igital **O**perational **R**esilience **A**ct.  
-
-Attempt to harmonize IT security regulation for
-financial-sector companies within the EU.  
-
-Puts requirements on monitoring, logging and incident reporting.  
-
-Similar rules exist in most finance/banking regulation.
-
-![bg right:30%](images/11-keenan_building.jpg)
 
 <!--
 -->
@@ -124,7 +112,7 @@ Longer retention may be illegal.
 ![bg right:30%](images/11-log_book.jpg)
 
 <!--
-https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2022482-om-elektronisk-kommunikation_sfs-2022-482/
+https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2022482-om-elektronisk-kommunikation_sfs-2022-482/#K9P22
 -->
 
 ---

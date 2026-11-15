@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Regular expressions"
@@ -117,7 +117,7 @@ $ cat auth.log | pcregrep \
 
 ```
 ^\d\d:\d\d →
-Line begins with two digits, a comma and two more digits.
+Line begins with two digits, a colon and two more digits.
 
 [A-Z][a-z]+ →
 Word begins with a uppercase letter, followed by one or
@@ -144,10 +144,12 @@ Matches any character zero or more times.
 Matches any character one or more times.
 ```
 
+_(OT: That dot has led to many vulns!)_
+
 ![bg right:30%](images/14-teardown.jpg)
 
 ---
-## Named capture groups
+## Named/Numbered capture groups
 ```
 $ cat auth.log | pcregrep --only-matching=2 \
   '(?<time>.+) - (?<user>.+) login (?<result>.+) using (?<method>.+)'
@@ -220,6 +222,6 @@ A good resource is [Deeecode's
 "Simplified Regular Expressions" course](https://simpleregex.dev/)
   
 Just remember to also include
-negative test cases.
+"negative test cases"!
 
 ![bg right:30%](images/14-lizard.jpg)

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Centralized logging introduction"
@@ -33,8 +33,10 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Austin Design (CC BY-SA 2.0)" -->
-What does it take to implement and operate
-a centralized logging solution?  
+I've hopefully convinced you that
+centralized logging is the way to go!
+
+What does it take to implement/operate it?
 
 Architectural choices and their pros/cons.  
   
@@ -78,7 +80,7 @@ cluster architecture.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fredrik Rubensson (CC BY-SA 2.0)" -->
 ## Availability requirements
-Must the system always be available for **ingestion** of logs or can we handle buffering?  
+Must the system always be available for **ingestion** of logs or can we handle source buffering?  
   
 Are we required to **store** logs for a specific amount of time? Can we afford to lose some?  
   
@@ -95,6 +97,9 @@ Is it acceptable if **analysis/alerting** capabilities aren't always working?
 Security analysts, operations personnel, developers, marketing, data scientists...  
 
 May affect the need for capabilities like visualization, reporting and machine learning.
+
+Can we find a solution that satisfy them all?
+If so, do we really want to?
 
 ![bg right:30%](images/10-panda.jpg)
 
@@ -237,8 +242,8 @@ When do we parse logs?
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% The Preiser Project (CC BY 2.0)" -->
 ## Index-time parsing
-Interesting data is parsed/extracted
-before storage.  
+Interesting data/fields are
+parsed/extracted before storage.  
 
 The heavy-lifting is done once,
 improves search performance/cost.  
@@ -254,11 +259,11 @@ beforehand and a bit extra disk space.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Freed eXplorer (CC BY 2.0)" -->
 ## Search-time parsing
-Interesting data is parsed/extracted
-during each query.  
+Interesting data/fields are
+parsed/extracted during each query.  
 
 Enables low-friction ingestion and
-less storage space.  
+slightly less storage space.  
 
 Increases query time/cost.
 
@@ -302,7 +307,8 @@ In practice, we tend to combine these strategies.
 Store sensitive logs for at least two weeks,
 but longer if possible.
 
-Do we want a development system or DDoS attack to overwrite our authentication logs?
+Do we want a development system in debug mode or
+a DDoS attack to overwrite our authentication logs?
 
 ![bg right:30%](images/10-galley_carts.jpg)
 
@@ -406,7 +412,8 @@ Hard to determine what might be of
 interest before shit hits the fan.
 
 Should forwarded events also be
-kept around locally?  
+kept around locally? If so, we
+are paying for it twice...
 
 Can require quite a bit of coordination.
 
@@ -441,7 +448,7 @@ Analysis is gonna be painful if data
 ain't normalized.  
 
 No cross-solution standard/protocol,
-often requires versions to be in sync.
+often requires SW versions to be in sync.
 
 ![bg right:30%](images/10-contrails.jpg)
 

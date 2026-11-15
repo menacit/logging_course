@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Protecting logs"
@@ -27,7 +27,7 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Gobi (CC BY 2.0)" -->
 # Protecting log data
-### CIA and privacy
+### CIA and general privacy
 
 ![bg right:30%](images/12-cyborg.jpg)
 
@@ -37,11 +37,14 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Gobi (CC BY 2.0)" -->
 ## The basics
-You're logs may contain juicy information
+**C:** Your logs may contain juicy secrets
 that is of interest to adversaries.  
 
-Protection of their integrity is
-desirable and may be a (legal) requirement.
+**I**: Protection of their authenticity helps
+you trust them and may be a legal requirement.
+
+**A:** When your whole environment is pwned
+or down, will you be able to investigate?
 
 Besides regular system hardening,
 what else can we do?
@@ -54,16 +57,18 @@ what else can we do?
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pelle Sten (CC BY 2.0)" -->
 ## Data classification
-Not all log events are created equal.  
+Not all log events are created equal:
+Debug traces _VS_ Audit trails.  
 
 Proper tagging/classification of
 ingested sources aids enforcement of...
 
 - Access control
 - Retention policies
-- Backups
+- Backup inclusion
 
-Preferably done by producer, if possible -
+Preferably done in cooperation with
+the producer/system owner -
 make sure guidelines are available.
 
 ![bg right:30%](images/12-silos.jpg)
@@ -82,7 +87,7 @@ prevent data manipulation after write.
 
 A resonable compromise could be to
 utilize external object storage like
-AWS S3 _(with strict access permissions)_
+AWS S3 (with timed deletion policies)
 or a hash-chain protected database
 such as [immudb](https://immudb.io/).
 
@@ -97,12 +102,15 @@ such as [immudb](https://immudb.io/).
 The best way to handle storage
 of PII is to not.
 
-Anonymization removes/replaces information
-that could be tied to an invidual/entity.
+Anonymization removes information that
+could be tied to an individual/entity.
 
-Pseudonymization works similarly,
-except that a "lookup table" exist to
-revert the process if needed.
+Pseudonymization replaces information
+with a stable identifier (pseudonym).
+
+```
+user_id = hash(secret + email)
+```
 
 Preferably done by producer, if possible.
 
@@ -125,8 +133,6 @@ information may be automatically removed.
 
 As previously mentioned, preferably
 performed by the log producer.
-
-_(Reducing verbosity reduce retention cost)_
 
 ![bg right:30%](images/12-cleaning.jpg)
 
