@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Windows logging"
@@ -32,10 +32,14 @@ style: |
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Daniel Oliva Barbero (CC BY 2.0)" -->
-Like any other platform worth its name,
+Like any other OS worth its name,
 Microsoft Windows produces logs.  
 
-The way it does this is however slightly different.
+The way it does this is
+however slightly different.
+
+Let's have a look and talk about
+the pros/cons of their approach.
 
 ![bg right:30%](images/17-vapor_windows.jpg)
 
@@ -49,7 +53,7 @@ Handles event retention/rotation.
 
 Stores logs on disk in a custom binary format, exposed to consumers as XML.  
   
-Supports log forwarding.  
+Built-in support for log forwarding.  
   
 Tries to solve many of the same problems as syslog daemons on Linux/UNIX.
 
@@ -87,7 +91,8 @@ Tries to solve many of the same problems as syslog daemons on Linux/UNIX.
 ## What does the OS log?
 Primarily configured using the "audit policy".  
 
-Most capabilities are turned off by default, enabling them all makes system unusable.  
+Most capabilities are turned off by default,
+enabling them all likely makes system unusable.  
 
 Requires customization depending on
 your use-case.  
@@ -189,6 +194,6 @@ Highly configurable, for better
 and/or worse.  
 
 For configuration guidance,
-check out [CIS benchmark](https://www.cisecurity.org/cis-benchmarks).
+check out the [CIS benchmark](https://www.cisecurity.org/cis-benchmarks).
 
 ![bg right:30%](images/17-negative_photo.jpg)

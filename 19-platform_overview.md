@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Platform overview"
@@ -69,8 +69,6 @@ Used to be the king, but was
 also priced accordingly.  
 
 Provided as on-prem or SaaS.  
-  
-Acquired by Cisco in 2023.
 
 ![bg right:30%](images/19-pcb_macro.jpg)
 
@@ -85,9 +83,7 @@ very capable search engine.
 
 Resource hungry, but quite easy to scale.  
 
-Support and plugins for "enterprise"
-features (like auth and TLS) available
-from Elastic.  
+A bit tricky to setup and manage.
 
 Closed-sourced in 2021, resulting in
 "OpenSearch" fork. Became open again in 2024.
@@ -113,9 +109,10 @@ Closed-sourced in 2021.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Joel Rangsmo (CC BY-SA 4.0)" -->
 ## Wazuh
-Builds upon ~~the ELK stack~~ OpenSearch and
-a fork of the HIDS "OSSEC" to provide
-an open source solution for...
+Builds upon ~~the ELK stack~~
+OpenSearch and a fork of the
+**H**ost **I**ntrusion **D**etection **S**ystem
+"OSSEC" to provide an open source solution for...
 
 \*drum roll\*
 
@@ -129,20 +126,17 @@ consulting and support.
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Maja Dumat (CC BY 2.0)" -->
-## Loki
-FOSS logging solution built
-by Grafana Labs.  
-
+## Loki and VictoriaLogs
 Trying to take a fresh approach
 and learn from previous mistake.  
 
 Easier and cheaper to operate.  
 
+(Got a RPi around? Good enough)
+
 Less flexible, but good enough
 for most operational logging
 use-cases. A SIEM? Not yet.
-
-Also available as SaaS.
 
 ![bg right:30%](images/19-tunnel.jpg)
 

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Formats and protocols"
@@ -84,8 +84,8 @@ We can try to parse it using some regular expressions:
 <!-- _footer: "%ATTRIBUTION_PREFIX% Nicholas Day (CC BY 2.0)" -->
 ## Ain't all that trivial
 Most log files contain multiple
-different event types - in this
-case, perhaps runtime errors?  
+different event types - in this case,
+perhaps also operational messages?  
 
 We could write a bunch more
 complex regular expressions,
@@ -110,7 +110,7 @@ time=16:20 type=login user=Bob ip=127.0.0.1 success=no
 Clear and easily parsable fields.  
 
 Requires many bytes just to describe
-the log structure (don't make Greta cry).
+the log structure (makes Greta cry).
 
 Need to handle escaping/quoting of
 special characters like spaces.  
@@ -210,8 +210,9 @@ string, number or list?~~
 Requires many bytes just to describe
 the log structure (you made her cry).  
 
-Besides data type, JSON doesn't
-tell us what the field contains.  
+Besides data type, JSON doesn't really
+tell us what the field contains
+(no standardized naming/format).  
 
 ![bg right:30%](images/16-turtle.jpg)
 
@@ -245,8 +246,8 @@ Requires an ~~honorable~~ mention.
 Similar to JSON, but with more
 complexity/bells and whistles.  
 
-Used for log storage by Windows
-and other _enterprise software_.
+Used for Windows logs and
+other _enterprise software_.
 
 ![bg right:30%](images/16-staircase.jpg)
 
@@ -269,7 +270,7 @@ to (de)serialize/parse data.
 
 Fabricated/Mock example:
 - **Byte 1 to 7**: UNIX timestamp
-- **Byte 8**: Event type (Firewall reject)
+- **Byte 8**: Event type (Firewall reject - IPv4)
 - **Byte 9 to 12**: Source IP address
 - **Byte 13 to 14**: Destination port
 - **Byte 15 to 18**: Destination IP address
@@ -283,15 +284,17 @@ Fabricated/Mock example:
 ```
 $ echo "\
 2023-11-07T10:53:16+00:00 \
-FW_BLOCK 10.13.37.142 3389 \
+FW_BLOCK_V4 10.13.37.142 3389 \
 192.168.119.231 #146" \
 | wc --bytes
 
-74
+77
 ```
 
 Can save you a lot of storage/bandwidth
 and many CPU cycles. Greta is happy!  
+
+(Hence why NetFlow/IPFIX takes this approach)
 
 ![bg right:30%](images/16-computer_lady.jpg)
 
@@ -328,14 +331,14 @@ centralized logging server?
 In the beginning (since 80s),
 there was syslog.  
 
-Local service and network protocol
-for log collection/transfer.  
+Local service ("/dev/syslog") and network
+protocol for log collection/transfer.  
 
 Port 514/UDP (and TCP, sometimes).  
 
 Still dominant method for sending
 logs from network equipment and
-embedded appliances.
+similar appliances.
 
 ![bg right:30%](images/16-bubbles.jpg)
 
@@ -381,6 +384,8 @@ compression and large messages.
 Quite a bit of overhead/bloat for
 the logging use-case.  
 
+(Unless "batching" is used!)
+
 Doesn't define a message format.
 
 ![bg right:30%](images/16-pyramids.jpg)
@@ -406,9 +411,10 @@ syslog replacement.
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% RoboticSpider (CC BY 4.0)" -->
 For better or worse, most logging solutions
-use their own custom agents/protocols.  
+use their own custom agents/protocols
+for transfer of events.  
 
-More about those later.
+More about those later!
 
 ![bg right:30%](images/16-robot.jpg)
 
@@ -419,7 +425,9 @@ Log events should have a
 clearly defined structure.  
 
 Each format has its own
-benefits and trade-offs.  
+benefits and trade-offs -
+for most use-cases, **NDJSON**  
+with **ECS** strikes the best balance.
 
 Insufficient standardization and
 a wide range of user requirements

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -98,13 +98,27 @@ Some also prevents/restricts logging.
 Some example approaches are...
 
 - **C**onfidentiality: Hardening, pseudonymization
-- **I**ntegrity: Forwarding, append-only storage
-- **A**vailability: Replication, offline backups
+- **I**ntegrity: Append-only storage (soft or hard)
+- **A**vailability: Minimizing infrastructure dependencies, (offline) backups
 
 Heavily dependent on properly
-categorizing log sources. 
+understanding log sources and event types. 
 
 ![bg right:30%](images/13-lock_pin.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Jonathan Miske (CC BY-SA 2.0)" -->
+## Regular expressions
+Language for pattern matching and
+data extraction.
+
+Defacto standard for working with
+unstructured log data.
+
+Practice your skills using sites
+like [RegexOne](https://www.regexone.com/)!
+
+![bg right:30%](images/27-abandoned_silo.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Rod Waddington (CC BY-SA 2.0)" -->

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Extending the Windows event log"
@@ -39,7 +39,7 @@ adjusting logging besides the
 
 Many third-party tools/products
 exist to extend the capabilities
-even further.  
+even further - many are $$$!  
   
 We'll look at two examples -
 Sysmon and PowerShell audit logging.
@@ -50,7 +50,7 @@ Sysmon and PowerShell audit logging.
 <!-- _footer: "%ATTRIBUTION_PREFIX% Edenpictures (CC BY 2.0)" -->
 ## Meet Sysmon
 Released in 2014 as a part
-of Microsoft "Sysinternals".  
+of Windows "Sysinternals".  
 
 Hooks into Windows kernel
 to intercept activity, just like many
@@ -117,6 +117,9 @@ inside PowerShell?!
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pedro Ribeiro Simões (CC BY 2.0)" -->
 PowerShell is loved by
 admins and hackers alike.  
+
+Great tool for
+[**L**iving **O**f **T**he **L**and](https://lolbas-project.github.io/).
   
 Utilizes Windows APIs instead
 of spawning processes that are
