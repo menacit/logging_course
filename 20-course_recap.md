@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: Course recap"
@@ -76,7 +76,7 @@ different transfer mechanisms,
 such as UDP and TCP + TLS.  
 
 HTTP(S) is a popular option due to its
-wide support, but introduces overhead.  
+wide support, but introduces some overhead.  
 
 ![bg right:30%](images/27-telephone_pole.jpg)
 

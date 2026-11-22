@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch usage basics"
@@ -435,7 +435,7 @@ or a combination of both.
 Queries return matching documents.  
 
 Aggregations returns statistics
-about document fields.  
+based on fields in documents.  
 
 They can be combined to filter
 data for statistical analysis.
@@ -623,10 +623,27 @@ Depending on your preferences, you can use
 **P**ipe **P**rocessing **L**anguage or
 **S**tructured **Q**uery **L**anguage.  
 
-Under the hood, these get translate to
-LQL with varying degrees of success.
+Under the hood, these get to translated
+to LQL (with varying degrees of success).
 
 ([Sigma](https://sigmahq.io/) is also an option!)
+
+![bg right:30%](images/22-phone_booth.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Wendelin Jacober (CC0 1.0)" -->
+## DQL in a nutshell
+```
+# Search for documents containing
+# specified string in username field
+user:mallory
+
+# Combine multiple search terms using
+# conditional statments and make use
+# of wildcards and nummeric filters
+hostname:db-*.int.example.org \
+and (log_level >= 5 or type:exception)
+```
 
 ![bg right:30%](images/22-phone_booth.jpg)
 
@@ -637,7 +654,18 @@ Are you missing some of that eye candy?
 Let's do some searches and visualizations
 in OpenStack Dashboards!
 
+(Live demo)
+
 ![bg right:30%](images/22-hole_in_wall.jpg)
+
+<!--
+- Create index pattern
+- Tour of discover UI!
+- Example use-case: Honeypot web servers
+- Finding the appropriate log source using freetext search
+- Filtering with DQL and LQL
+- Building visualizations (including geomap)
+-->
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Guilhem Vellut (CC BY 2.0)" -->

@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2025 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch introduction"
@@ -119,6 +119,9 @@ to an **index**. Once stored, they are
 called "**documents**" and become
 available for queries/analysis.
 
+Data is submitted and queried
+using a HTTP API.
+
 ![bg right:30%](images/21-chip.jpg)
 
 ---
@@ -175,7 +178,7 @@ $ curl "${BASE_URL}/" --request GET
 ```json
 {
   "name": "Test Examplesson",
-  "kool": false,
+  "cool": false,
   "age": 42
 }
 ```
@@ -219,7 +222,7 @@ $ curl \
         "_score" : 1.0,
         "_source" : {
           "name" : "Test Examplesson",
-          "kool" : false,
+          "cool" : false,
           "age" : 42
         }
         [...]
@@ -229,10 +232,14 @@ $ curl \
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Fibreman (CC0 1.0)" -->
-Why is it kool?  
+Why is OpenSearch neat compared
+to a traditional database?  
   
 Amazing analytics capabilities
 and quite easy to scale!
+
+Let's talk a little bit about how it
+works under the hood.
 
 ![bg right:30%](images/21-laser.jpg)
 
@@ -267,18 +274,6 @@ implement storage/processing tiers.
 ![bg right:30%](images/21-server_rack.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% Martin Fisch (CC BY 2.0)" -->
-## Searching capabilities
-Swiss army knife of data analysis.  
-
-Full-text queries and advanced aggregation.  
-
-Includes plugins out-of-the-box for
-machine learning, correlation, etc.
-
-![bg right:30%](images/21-bees.jpg)
-
----
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pedro Ribeiro Simões (CC BY 2.0)" -->
 ## Detailed field mapping
 Besides the JSON data types, such as strings,
@@ -303,6 +298,18 @@ to aid the search engine find relevant results.
 ![bg right:30%](images/21-greek_streetart.jpg)
 
 ---
+<!-- _footer: "%ATTRIBUTION_PREFIX% Martin Fisch (CC BY 2.0)" -->
+## Searching capabilities
+Swiss army knife of data analysis.  
+
+Full-text queries and advanced aggregation.  
+
+Includes plugins out-of-the-box for
+machine learning, correlation, etc.
+
+![bg right:30%](images/21-bees.jpg)
+
+---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Jan Helebrant (CC0 1.0)" -->
 OpenSearch is a complex beast.  
   
@@ -310,7 +317,8 @@ Takes quite a bit of expertise
 to manage and use.  
   
 Don't feel bad if you're
-getting confused.  
+confused right now - it will
+sink in during the course.
   
 We'll focus the use-case of
 centralized logging.  
