@@ -1,5 +1,5 @@
 ---
-SPDX-FileCopyrightText: © 2023 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 
 title: "Logging course: OpenSearch visualization lab"
@@ -34,7 +34,8 @@ style: |
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Qubodup (CC BY 2.0)" -->
 ## Lab description
-Graded exercise to use Logstash for data extraction and OpenSearch Dashboards
+Graded exercise to use Logstash for
+data extraction and OpenSearch Dashboards
 for visualization.
   
 For detailed instructions, see:  

@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2024 Menacit AB <foss@menacit.se>
+SPDX-FileCopyrightText: © 2026 Menacit AB <foss@menacit.se>
 SPDX-License-Identifier: CC-BY-SA-4.0
 X-Context: Logging course - OpenSearch query and visualization lab
 -->
@@ -7,7 +7,7 @@ X-Context: Logging course - OpenSearch query and visualization lab
 # Logging course - OpenSearch query and visualization lab
 
 ## Scenario description
-Whose crazy idea was it to pivot the business from lumberjacking to threat intelligence gathering?!
+Whose crazy idea was it to pivot the business from lumber jacking to threat intelligence gathering?
 Nevertheless, it has been decided and we better collect some for our customers. Your ex-colleague
 setup some honeypot servers and added logging agents to monitor intrusion/hacking attempts, but he
 mysteriously disappeared into the woods before implementing the required analysis in your SIEM
@@ -40,7 +40,7 @@ be provided by the course teacher.
 ## Tasks
 
 ### Mandatory ("G")
-- Develop a query to identify failed remote Linux login attempts (SSH)
+- Develop a query to identify failed remote Linux login attempts
 - Develop a query to identify failed remote Windows login attempts
 - Create a dashboard with a geographical map widget
 - Modify the widget to mark locations associated with source IP addresses of failed login attempts 
@@ -48,7 +48,7 @@ be provided by the course teacher.
 
 ### Meritorious ("VG")
 - Modify the Logstash pipeline configuration to extract usernames for SSH login attempts
-- Create a dashboard widget containing the five most common usernames in failed login attempts
+- Create a dashboard widget containing the 5 most common usernames in all failed login attempts
 
 
 ## Lab report/documentation
@@ -67,7 +67,10 @@ to %REPORT_TARGET%.
 
 ### Triggering events of interest
 In order to aid testing of search queries, events such as failed logins can be triggered by the
-student by attempting to remotely access "linux.%LAB_DOMAIN%" and "windows.%LAB_DOMAIN%".
+student by attempting to remotely access "linux.%LAB_DOMAIN%" (SSH) and "windows.%LAB_DOMAIN%"
+(RDP). Try commonly existing usernames, such as "root" and "Administrator", and usernames that are
+unlikely to exist on the target systems, such as a randomly generated string, to determine if the
+generated log events differ.
 
 
 ### Testing Grok patterns

@@ -258,24 +258,8 @@ one or more **nodes**.
 ![bg right:30%](images/21-ayeaye.jpg)
 
 ---
-<!-- _footer: "%ATTRIBUTION_PREFIX% ORNL (CC BY 2.0)" -->
-## Node clustering
-OpenSearch is "cluster-first".  
-  
-Adding more nodes and shards can improve
-capacity, performance and availability.  
-  
-Can be scaled down to save
-money/electricity.  
-
-Node types can be mixed and matched to
-implement storage/processing tiers.
-
-![bg right:30%](images/21-server_rack.jpg)
-
----
 <!-- _footer: "%ATTRIBUTION_PREFIX% Pedro Ribeiro Simões (CC BY 2.0)" -->
-## Detailed field mapping
+## Detailed index field mapping
 Besides the JSON data types, such as strings,
 integers and arrays, several others are supported
 to aid the search engine find relevant results.
@@ -296,6 +280,22 @@ to aid the search engine find relevant results.
 ```
 
 ![bg right:30%](images/21-greek_streetart.jpg)
+
+---
+<!-- _footer: "%ATTRIBUTION_PREFIX% ORNL (CC BY 2.0)" -->
+## Node clustering
+OpenSearch is "cluster-first".  
+  
+Adding more nodes and shards can improve
+capacity, performance and availability.  
+  
+Can be scaled down to save
+money/electricity.  
+
+Node types can be mixed and matched to
+implement storage/processing tiers.
+
+![bg right:30%](images/21-server_rack.jpg)
 
 ---
 <!-- _footer: "%ATTRIBUTION_PREFIX% Martin Fisch (CC BY 2.0)" -->
